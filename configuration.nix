@@ -234,6 +234,8 @@
     libsForQt5.kaccounts-providers
     libsForQt5.kio-gdrive
     libsForQt5.sddm-kcm
+    libsForQt5.filelight
+    libsForQt5.kcalc
 
     # Containers
     appimage-run
