@@ -100,9 +100,7 @@
   # AMD GPU Configuration
   hardware.amdgpu.amdvlk = true;
   hardware.amdgpu.opencl = true;
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-  ];
+  hardware.amdgpu.loadInInitrd = true;
 
   # Enables hybrid graphics management and ASUS-specific hardware control.
   # https://asus-linux.org/wiki/nixos/
