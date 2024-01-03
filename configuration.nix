@@ -77,6 +77,7 @@
   # Enable Wayland
   services.xserver.displayManager.sddm.wayland.enable = true;
   services.xserver.displayManager.defaultSession = "plasmawayland";
+  programs.dconf.enable = true; # fix theming issues in GTK apps
 
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland support in Chromium and Electron based applications
