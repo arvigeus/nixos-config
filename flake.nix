@@ -25,6 +25,10 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
   # `outputs` are all the build result of the flake.
@@ -37,9 +41,10 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, plasma-manager, ... }@inputs:
     let
       system = "x86_64-linux";
+      username = "arvigeus";
       genericModules = [
         {
           # This fixes things that don't use Flakes, but do want to use NixPkgs.
@@ -111,7 +116,13 @@
           # specialArgs = {...};  # pass custom arguments into all sub module.
           specialArgs = { inherit inputs; }; # Set all input parameters as input key of specialArgs (ex: inputs.nixos-hardware)
           # specialArgs = inputs; # Set all input parameters as specialArgs of all sub-modules so that we can use them in sub-modules directly.
-          modules = genericModules ++ [ ./configuration.nix { home-manager.users.arvigeus = import ./home.nix; } ];
+          modules = genericModules ++ [
+            ./configuration.nix
+            {
+              home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+              home-manager.users.${username} = import ./home.nix;
+            }
+          ];
         };
       };
     };
