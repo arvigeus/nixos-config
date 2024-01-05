@@ -12,7 +12,7 @@ debug:
 
 update:
 	nix flake update
-	flatpak update
+	flatpak update -y
 	sudo nixos-rebuild switch --flake .
 
 list-generations:
