@@ -197,6 +197,7 @@
     rustup
     meld
     fira-code
+    noto-fonts
 
     # Multimedia
     mpv-unwrapped
@@ -245,6 +246,15 @@
     virt-manager-qt
     pinentry-qt
   ];
+  
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+  ];
 
   programs.firefox = {
     enable = true;
@@ -268,7 +278,9 @@
 
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true; # KDE Partition Manager
+
   services.flatpak.enable = true;
+  fonts.fontDir.enable = true; # allow Flatpak apps to use system fonts
 
   programs.evolution = {
     enable = true;
