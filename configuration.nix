@@ -158,6 +158,8 @@
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "arvigeus";
   security.sudo.wheelNeedsPassword = false;
+  security.pam.services.ssdm.enableKwallet = true;
+  security.pam.services.ssdm.gnupg.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -236,6 +238,9 @@
     libsForQt5.sddm-kcm
     libsForQt5.filelight
     libsForQt5.kcalc
+    libsForQt5.kwallet
+    libsForQt5.kwallet-pam
+    libsForQt5.kwalletmanager
 
     # Containers
     appimage-run
