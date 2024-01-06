@@ -19,6 +19,7 @@ list-generations:
 	nix profile history --profile /nix/var/nix/profiles/system
 
 list-packages:
+	flatpak list --app --columns=application | tail -n +1
 	nix-env -qa
 
 cleanup:
