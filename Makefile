@@ -1,4 +1,4 @@
-.PHONY: preview install debug update list-generations list-packages cleanup current
+.PHONY: preview install debug update list-generations list-packages cleanup anchor
 
 preview:
 	sudo nixos-rebuild test --flake .
@@ -26,7 +26,7 @@ cleanup:
 	sudo nix store gc --debug
 	sudo nixos-rebuild switch --flake .
 
-current:
+anchor:
 	sudo nix-collect-garbage -d # System
 	nix-collect-garbage -d # User
 	sudo nixos-rebuild switch --flake .
