@@ -32,9 +32,9 @@
       "kwinrulesrc"."78315bde-2c1a-488f-bbee-7b8dfbf4cc3a"."wmclassmatch" = 1;
       "kwinrulesrc"."General"."count" = 1;
       "kwinrulesrc"."General"."rules" = 1;
+      "kxkbrc"."Layout"."Options" = "grp:alt_shift_toggle,terminate:ctrl_alt_bksp"; # Kill server
       "kxkbrc"."Layout"."DisplayNames" = ",";
       "kxkbrc"."Layout"."LayoutList" = "us,bg";
-      "kxkbrc"."Layout"."Options" = "grp:alt_shift_toggle,terminate:ctrl_alt_bksp";
       "kxkbrc"."Layout"."ResetOldOptions" = true;
       "kxkbrc"."Layout"."SwitchMode" = "Window";
       "kxkbrc"."Layout"."Use" = true;
