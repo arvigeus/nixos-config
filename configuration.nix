@@ -92,7 +92,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enables proprietary firmware for enhanced hardware support 
   hardware.enableRedistributableFirmware = true;
