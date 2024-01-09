@@ -63,6 +63,7 @@
           nix.registry.nixos.flake = inputs.self;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "bak";
         }
       ];
     in

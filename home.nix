@@ -47,6 +47,10 @@
     enable = true;
     package = pkgs.vscodium;
 
+    mutableExtensionsDir = false;
+    enableUpdateCheck = false;
+    enableExtensionUpdateCheck = false;
+
     extensions = with pkgs.open-vsx; [
       # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/open-vsx-latest.json
       jnoortheen.nix-ide
@@ -67,8 +71,6 @@
       pflannery.vscode-versionlens
       ms-playwright.playwright
       ms-vscode.test-adapter-converter
-      # hbenl.vscode-test-explorer
-      swellaby.vscode-rust-test-adapter
       mtxr.sqltools
       mtxr.sqltools-driver-pg
       mtxr.sqltools-driver-sqlite
@@ -86,7 +88,7 @@
       "editor.fontFamily" = "'Fira Code', 'Droid Sans Mono', 'monospace', monospace";
       "editor.inlineSuggest.enabled" = true;
 
-      "testExplorer.useNativeTesting" = true; # TODO
+      "testExplorer.useNativeTesting" = true; # TODO doesn't seem to be a valid option
 
       "git.autofetch" = true;
       "git.confirmSync" = false;
