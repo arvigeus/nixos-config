@@ -47,8 +47,8 @@
     enable = true;
     package = pkgs.vscodium;
 
-    extensions = with pkgs.vscode-extensions; [
-      # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vscode/extensions/default.nix
+    extensions = with pkgs.open-vsx; [
+      # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/open-vsx-latest.json
       jnoortheen.nix-ide
       firefox-devtools.vscode-firefox-debug
       denoland.vscode-deno
@@ -61,29 +61,32 @@
       unifiedjs.vscode-mdx
       zhuangtongfa.material-theme
       bradlc.vscode-tailwindcss
-      # csstools.postcss
-      # pflannery.vscode-versionlens
-      # amodio.toggle-excluded-files
       gruntfuggly.todo-tree
-      # swellaby.vscode-rust-test-adapter
-      # hbenl.vscode-test-explorer
-      # stylelint.vscode-stylelint
-
       ms-vsliveshare.vsliveshare
-      # ms-playwright.playwright
-      # ms-vscode-remote.vscode-remote-extensionpack
-      # ms-vscode.remote-explorer
-      # mtxr.sqltools
-      # mtxr.sqltools-driver-pg
-      # mtxr.sqltools-driver-sqlite
-      # ms-vscode.test-adapter-converter
-    ];
+      csstools.postcss
+      stylelint.vscode-stylelint
+      pflannery.vscode-versionlens
+      ms-playwright.playwright
+      ms-vscode.test-adapter-converter
+      # hbenl.vscode-test-explorer
+      swellaby.vscode-rust-test-adapter
+      mtxr.sqltools
+      mtxr.sqltools-driver-pg
+      mtxr.sqltools-driver-sqlite
+    ] ++ (with pkgs.vscode-marketplace; [
+      # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/vscode-marketplace-latest.json
+      ms-vscode-remote.vscode-remote-extensionpack
+      ms-vscode.remote-explorer
+      amodio.toggle-excluded-files
+    ]);
 
     userSettings = {
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "One Dark Pro Flat";
       "editor.fontFamily" = "'Fira Code', 'Droid Sans Mono', 'monospace', monospace";
       "editor.inlineSuggest.enabled" = true;
+
+      "testExplorer.useNativeTesting" = true; # TODO
 
       "git.autofetch" = true;
       "git.confirmSync" = false;

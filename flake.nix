@@ -29,6 +29,12 @@
     plasma-manager.url = "github:pjones/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
+
+    
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   # `outputs` are all the build result of the flake.
@@ -41,7 +47,7 @@
   #
   # The `@` syntax here is used to alias the attribute set of the
   # inputs's parameter, making it convenient to use inside the function.
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, plasma-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, plasma-manager, nix-vscode-extensions, ... }@inputs:
     let
       system = "x86_64-linux";
       username = "arvigeus";
@@ -118,6 +124,11 @@
           # specialArgs = inputs; # Set all input parameters as specialArgs of all sub-modules so that we can use them in sub-modules directly.
           modules = genericModules ++ [
             ./configuration.nix
+            {
+              nixpkgs.overlays = [
+                inputs.nix-vscode-extensions.overlays.default
+              ];
+            }
             {
               home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
               home-manager.users.${username} = import ./home.nix;
