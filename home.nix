@@ -62,7 +62,6 @@
       zhuangtongfa.material-theme
       bradlc.vscode-tailwindcss
       gruntfuggly.todo-tree
-      ms-vsliveshare.vsliveshare
       csstools.postcss
       stylelint.vscode-stylelint
       pflannery.vscode-versionlens
@@ -77,6 +76,7 @@
       # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/vscode-marketplace-latest.json
       ms-vscode-remote.vscode-remote-extensionpack
       ms-vscode.remote-explorer
+      ms-vsliveshare.vsliveshare
       amodio.toggle-excluded-files
     ]);
 
