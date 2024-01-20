@@ -202,7 +202,6 @@
     noto-fonts
 
     # Multimedia
-    mpv-unwrapped
     vlc
     gimp-with-plugins
     gimpPlugins.lqrPlugin
@@ -213,6 +212,7 @@
     lightworks
     mkvtoolnix
     subtitleedit
+    audacious
 
     # Gaming
     mangohud
@@ -223,6 +223,7 @@
     winetricks
     protonup-qt
     protontricks
+    yuzu-mainline
 
     # Messaging
     telegram-desktop

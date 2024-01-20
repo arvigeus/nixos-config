@@ -28,6 +28,8 @@ cleanup:
 	sudo nixos-rebuild switch --flake .
 
 anchor:
-	sudo nix-collect-garbage -d # System
-	nix-collect-garbage -d # User
+	# System
+	sudo nix-collect-garbage -d
+	# User
+	nix-collect-garbage -d
 	sudo nixos-rebuild switch --flake .
