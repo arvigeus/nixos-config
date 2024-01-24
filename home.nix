@@ -56,12 +56,14 @@
     extensions = with pkgs.open-vsx; [
       # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/open-vsx-latest.json
       jnoortheen.nix-ide
+      eamodio.gitlens
       firefox-devtools.vscode-firefox-debug
       denoland.vscode-deno
       mikestead.dotenv
       editorconfig.editorconfig
       usernamehw.errorlens
       dbaeumer.vscode-eslint
+      graphql.vscode-graphql-syntax
       graphql.vscode-graphql
       davidanson.vscode-markdownlint
       unifiedjs.vscode-mdx
