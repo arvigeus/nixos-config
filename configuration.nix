@@ -200,6 +200,7 @@
     meld
     fira-code
     noto-fonts
+    distrobox
 
     # Multimedia
     vlc
@@ -211,7 +212,7 @@
     kodi-wayland
     lightworks
     mkvtoolnix
-    subtitleedit
+    subtitleeditor
     audacious
 
     # Gaming
@@ -246,12 +247,22 @@
     # Containers
     appimage-run
 
-    # Productivity
-
     # Misc
     virt-manager-qt
     pinentry-qt
   ];
+
+  virtualisation = {
+    podman = {
+      enable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
   
   fonts = {
     packages = with pkgs; [
