@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ config, self, pkgs, inputs, ... }:
 
 {
   nix = {
@@ -113,7 +113,7 @@
   };
 
   # Battery
-  hardware.asus.battery.chargeUpto = 75;
+  # hardware.asus.battery.chargeUpto = 75;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
@@ -182,6 +182,7 @@
     unrar
     whois
     libnotify
+    (import "${self}/pkgs/zephyrusctl.nix" { inherit pkgs; })
 
     # Browsers
     google-chrome
@@ -240,6 +241,7 @@
     libsForQt5.sddm-kcm
     libsForQt5.filelight
     libsForQt5.kcalc
+    libsForQt5.kdialog
     libsForQt5.kwallet
     libsForQt5.kwallet-pam
     libsForQt5.kwalletmanager

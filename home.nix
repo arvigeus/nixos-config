@@ -2,6 +2,11 @@
   programs.plasma = {
     enable = true;
 
+    shortcuts = {
+      "asusctl.desktop"."_launch" = "Launch (6)"; # Fn + F5
+      "zephyrusctl.desktop"."_launch" = "Launch (3)"; # M4
+    };
+
     configFile = {
       "dolphinrc"."General"."BrowseThroughArchives" = true;
       "kcminputrc"."Libinput.1267.12699.ASUE120A:00 04F3:319B Touchpad"."TapToClick" = true;
@@ -42,6 +47,8 @@
       "kxkbrc"."Layout"."Use" = true;
       "kxkbrc"."Layout"."VariantList" = ",phonetic";
       "plasma-localerc"."Formats"."LANG" = "en_US.UTF-8";
+      "kglobalshortcutsrc"."asusctl.desktop"."_k_friendly_name" = "\sprofile -n && notify-send \"Power Profile\" \"$(asusctl profile -p)\"";
+      "kglobalshortcutsrc"."zephyrusctl.desktop"."_k_friendly_name" = "zephyrusctl";
     };
   };
 

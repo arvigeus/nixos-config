@@ -121,7 +121,7 @@
           # you must use `specialArgs` by uncomment the following line:
           #
           # specialArgs = {...};  # pass custom arguments into all sub module.
-          specialArgs = { inherit inputs; }; # Set all input parameters as input key of specialArgs (ex: inputs.nixos-hardware)
+          specialArgs = { inherit inputs self; }; # Set all input parameters as input key of specialArgs (ex: inputs.nixos-hardware)
           # specialArgs = inputs; # Set all input parameters as specialArgs of all sub-modules so that we can use them in sub-modules directly.
           modules = genericModules ++ [
             ./configuration.nix
