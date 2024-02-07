@@ -89,7 +89,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland support in Chromium and Electron based applications
     MOZ_USE_XINPUT2 = "1";
-    MANGOHUD = "1"; # Enable for all Vulkan games
+    # MANGOHUD = "1"; # Enable for all Vulkan games
   };
 
   # Configure keymap in X11
@@ -120,7 +120,7 @@
   };
 
   # Battery
-  # hardware.asus.battery.chargeUpto = 75;
+  hardware.asus.battery.chargeUpto = 75;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true;
