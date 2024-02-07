@@ -90,6 +90,8 @@
       ms-vscode-remote.vscode-remote-extensionpack
       ms-vscode.remote-explorer
       ms-vsliveshare.vsliveshare
+      codeforge.remix-forge
+      jackardios.vscode-css-to-tailwindcss
       amodio.toggle-excluded-files
     ]);
 
@@ -99,7 +101,7 @@
       "editor.fontFamily" = "'Fira Code', 'Droid Sans Mono', 'monospace', monospace";
       "editor.inlineSuggest.enabled" = true;
 
-      "testExplorer.useNativeTesting" = true; # TODO doesn't seem to be a valid option
+      "testExplorer.useNativeTesting" = true; # TODO: doesn't seem to be a valid option
 
       "git.autofetch" = true;
       "git.confirmSync" = false;
