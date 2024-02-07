@@ -12,8 +12,8 @@ debug:
 
 update:
 	nix flake update
-	flatpak update -y
 	sudo nixos-rebuild switch --flake .
+	flatpak update -y
 
 list-generations:
 	nix profile history --profile /nix/var/nix/profiles/system
