@@ -70,6 +70,7 @@
       editorconfig.editorconfig
       usernamehw.errorlens
       dbaeumer.vscode-eslint
+      esbenp.prettier-vscode
       graphql.vscode-graphql-syntax
       graphql.vscode-graphql
       davidanson.vscode-markdownlint
