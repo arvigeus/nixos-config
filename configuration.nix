@@ -220,6 +220,7 @@
     kodi-wayland
     lightworks
     mkvtoolnix
+    ffmpeg
     subtitleeditor
     audacious
 
