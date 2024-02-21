@@ -62,32 +62,51 @@
 
     extensions = with pkgs.open-vsx; [
       # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/open-vsx-latest.json
-      jnoortheen.nix-ide
-      eamodio.gitlens
-      firefox-devtools.vscode-firefox-debug
-      denoland.vscode-deno
+
+      # Essentials
       mikestead.dotenv
       editorconfig.editorconfig
+
+      # Interface Improvements
+      eamodio.gitlens
       usernamehw.errorlens
+      pflannery.vscode-versionlens
+      wix.vscode-import-cost
+      gruntfuggly.todo-tree
+      zhuangtongfa.material-theme
+
+      # Web Dev
       dbaeumer.vscode-eslint
       esbenp.prettier-vscode
-      graphql.vscode-graphql-syntax
-      graphql.vscode-graphql
-      davidanson.vscode-markdownlint
-      unifiedjs.vscode-mdx
-      zhuangtongfa.material-theme
-      bradlc.vscode-tailwindcss
-      gruntfuggly.todo-tree
       csstools.postcss
       stylelint.vscode-stylelint
-      pflannery.vscode-versionlens
+      bradlc.vscode-tailwindcss
+      davidanson.vscode-markdownlint
+      unifiedjs.vscode-mdx
+      zenclabs.previewjs
+
+      # Deno
+      denoland.vscode-deno
+
+      # GraphQL
+      graphql.vscode-graphql-syntax
+      graphql.vscode-graphql
+
+      # Nix
+      jnoortheen.nix-ide
+      jetpack-io.devbox
+      arrterian.nix-env-selector
+
+      # Testing
       ms-playwright.playwright
+      firefox-devtools.vscode-firefox-debug
       ms-vscode.test-adapter-converter
       mtxr.sqltools
       mtxr.sqltools-driver-pg
-      mtxr.sqltools-driver-sqlite
     ] ++ (with pkgs.vscode-marketplace; [
+      mtxr.sqltools-driver-sqlite
       # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/vscode-marketplace-latest.json
+      vitest.explorer # TODO: Check later if this extension has been added to Open VSX
       ms-vscode-remote.vscode-remote-extensionpack
       ms-vscode.remote-explorer
       ms-vsliveshare.vsliveshare
