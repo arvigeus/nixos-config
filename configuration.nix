@@ -208,7 +208,9 @@
     meld
     fira-code
     noto-fonts
+    devbox
     distrobox
+    bruno
 
     # Multimedia
     vlc
