@@ -83,7 +83,7 @@
       bradlc.vscode-tailwindcss
       davidanson.vscode-markdownlint
       unifiedjs.vscode-mdx
-      zenclabs.previewjs
+      # zenclabs.previewjs # Error: EROFS: read-only file system
 
       # Deno
       denoland.vscode-deno

@@ -260,7 +260,7 @@
     appimage-run
 
     # Misc
-    virt-manager-qt
+    virt-manager
     pinentry-qt
   ];
 
