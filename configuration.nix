@@ -190,6 +190,7 @@
     whois
     libnotify
     (import "${self}/pkgs/zephyrusctl.nix" { inherit pkgs; })
+    (import "${self}/pkgs/rename-by-metadata.nix" { inherit pkgs; })
 
     # Browsers
     google-chrome
