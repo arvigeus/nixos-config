@@ -256,6 +256,7 @@
     libsForQt5.kwallet
     libsForQt5.kwallet-pam
     libsForQt5.kwalletmanager
+    libsForQt5.kdenlive
 
     # Containers
     appimage-run
