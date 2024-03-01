@@ -5,6 +5,7 @@ pkgs.writeShellApplication {
   runtimeInputs = with pkgs; [
     asusctl 
     supergfxctl 
+    powertop 
     libsForQt5.libkscreen 
     libsForQt5.kdialog 
     libnotify 
@@ -15,6 +16,7 @@ pkgs.writeShellApplication {
       ${pkgs.asusctl}/bin/asusctl -c 100
       ${pkgs.asusctl}/bin/asusctl profile -P Quiet
       ${pkgs.libsForQt5.libkscreen}/bin/kscreen-doctor output.eDP-2.mode.21 &> /dev/null
+      sudo ${pkgs.powertop}/bin/powertop --auto-tune &> /dev/null
       printf "Battery Max: <b>100%%</b>\n"
       echo "<b>$(${pkgs.supergfxctl}/bin/supergfxctl --mode Integrated)</b>"
     }

@@ -177,6 +177,7 @@
     # System tools
     git
     wget
+    powertop
     gnumake
     clinfo
     vulkan-tools
