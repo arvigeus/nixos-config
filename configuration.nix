@@ -229,6 +229,7 @@
 
     # Gaming
     mangohud
+    goverlay
     lutris
     heroic
     wineWowPackages.stable
