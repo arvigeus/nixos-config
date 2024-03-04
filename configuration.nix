@@ -221,7 +221,6 @@
     gimpPlugins.gap
     qbittorrent-qt5
     yt-dlp
-    kodi-wayland
     lightworks
     mkvtoolnix
     ffmpeg
@@ -245,20 +244,7 @@
     whatsapp-for-linux
     teams-for-linux
     discord
-
-    # KDE
-    libsForQt5.kget
-    libsForQt5.kaccounts-integration
-    libsForQt5.kaccounts-providers
-    libsForQt5.kio-gdrive
-    libsForQt5.sddm-kcm
-    libsForQt5.filelight
-    libsForQt5.kcalc
-    libsForQt5.kdialog
-    libsForQt5.kwallet
-    libsForQt5.kwallet-pam
-    libsForQt5.kwalletmanager
-    libsForQt5.kdenlive
+    thunderbird
 
     # Containers
     appimage-run
@@ -266,7 +252,22 @@
     # Misc
     virt-manager
     pinentry-qt
-  ];
+  ]
+  # KDE
+  ++ (with libsForQt5; [
+    kget
+    kaccounts-integration
+    kaccounts-providers
+    kio-gdrive
+    sddm-kcm
+    filelight
+    kcalc
+    kdialog
+    kwallet
+    kwallet-pam
+    kwalletmanager
+    kdenlive
+  ]);
 
   virtualisation = {
     podman = {
@@ -332,10 +333,6 @@
 
   services.flatpak.enable = true;
   fonts.fontDir.enable = true; # allow Flatpak apps to use system fonts
-
-  programs.evolution = {
-    enable = true;
-  };
 
   # Storage optimization
   nix.settings.auto-optimise-store = true;

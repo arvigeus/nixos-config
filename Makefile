@@ -2,6 +2,7 @@
 
 preview:
 	sudo nixos-rebuild test --flake .
+	bash ./flatpack.sh
 
 install:
 	sudo nixos-rebuild switch --flake .
