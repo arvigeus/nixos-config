@@ -98,15 +98,15 @@
       arrterian.nix-env-selector
 
       # Testing
+      vitest.explorer
       ms-playwright.playwright
       firefox-devtools.vscode-firefox-debug
       ms-vscode.test-adapter-converter
       mtxr.sqltools
       mtxr.sqltools-driver-pg
     ] ++ (with pkgs.vscode-marketplace; [
-      mtxr.sqltools-driver-sqlite
       # https://raw.githubusercontent.com/nix-community/nix-vscode-extensions/master/data/cache/vscode-marketplace-latest.json
-      vitest.explorer # TODO: Check later if this extension has been added to Open VSX
+      mtxr.sqltools-driver-sqlite
       ms-vscode-remote.vscode-remote-extensionpack
       ms-vscode.remote-explorer
       ms-vsliveshare.vsliveshare
