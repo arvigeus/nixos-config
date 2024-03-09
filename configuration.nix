@@ -234,8 +234,8 @@
     goverlay
     lutris
     heroic
-    wineWowPackages.stable
-    # wineWowPackages.waylandFull # unstable
+    # wineWowPackages.stable
+    wineWowPackages.waylandFull # unstable
     winetricks
     protonup-qt
     protontricks
@@ -250,6 +250,9 @@
 
     # Containers
     appimage-run
+
+    # Virtualization
+    # podman-desktop
 
     # Misc
     virt-manager
