@@ -213,6 +213,8 @@
     devbox
     distrobox
     bruno
+    delta
+    diffutils
 
     # Multimedia
     vlc
