@@ -252,6 +252,7 @@
     # Misc
     virt-manager
     pinentry-qt
+    icoutils # Display exe icons
   ]
   # KDE
   ++ (with libsForQt5; [
