@@ -258,6 +258,7 @@
     virt-manager
     pinentry-qt
     icoutils # Display exe icons
+    iconv # FIXME: https://github.com/arvigeus/nixos-config/issues/37
   ]
   # KDE
   ++ (with libsForQt5; [
