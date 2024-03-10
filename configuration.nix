@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, self, pkgs, inputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   nix = {
@@ -190,8 +190,8 @@
     unrar
     whois
     libnotify
-    (import "${self}/pkgs/zephyrusctl.nix" { inherit pkgs; })
-    (import "${self}/pkgs/rename-by-metadata.nix" { inherit pkgs; })
+    (pkgs.callPackage ./pkgs/zephyrusctl.nix { })
+    (pkgs.callPackage ./pkgs/rename-by-metadata.nix { })
 
     # Browsers
     google-chrome

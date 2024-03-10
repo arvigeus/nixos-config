@@ -14,7 +14,7 @@ pkgs.writeShellApplication {
     shopt -s nullglob
     for file in *.{heic,jpg,mp4,mov} ; do
       datetime=$($exiftool -q -d '%Y-%m-%d-%H-%M-%S' -CreateDate "$file" | awk -F ': ' '{print $2}')
-      ext="''${file##*.}"
+      ext="''${file##*.},,"
       if [ -n "$datetime" ]; then
         new_name="''${datetime}.''${ext}"
         if [ "$new_name" != "$file" ]; then
