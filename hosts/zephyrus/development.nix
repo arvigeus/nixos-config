@@ -1,11 +1,7 @@
 
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  nixpkgs.overlays = [
-    inputs.nix-vscode-extensions.overlays.default
-  ];
-
   environment.systemPackages = with pkgs; [
     nil
     nixpkgs-fmt

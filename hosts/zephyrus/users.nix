@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, outputs, ... }:
 
 {
   imports =
@@ -7,7 +7,7 @@
     ];
 
   nix.registry.nixos.flake = inputs.self;
-  home-manager.useGlobalPkgs = true;
+  # home-manager.useGlobalPkgs = true; # Cannot use overlays with this
   home-manager.useUserPackages = true;
   home-manager.backupFileExtension = "bak";
 
@@ -22,6 +22,12 @@
     ];
   };
 
-  home-manager.users.arvigeus = import ./home.nix;
+  home-manager = {
+    extraSpecialArgs = { inherit inputs outputs; };
+    users = {
+      # Import your home-manager configuration
+      arvigeus = import ./home.nix;
+    };
+  };
 }
 

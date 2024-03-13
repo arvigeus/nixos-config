@@ -54,9 +54,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # FIXME
-    # zephyrusctl
-    (callPackage ../../pkgs/zephyrusctl.nix { })
+    zephyrusctl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

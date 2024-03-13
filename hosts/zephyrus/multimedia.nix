@@ -13,9 +13,7 @@
     ffmpeg
     subtitleeditor
     audacious
-    # FIXME
-    # rename-by-metadata
-    (callPackage ../../pkgs/rename-by-metadata.nix { })
+    rename-by-metadata
   ];
 
   services.xserver.desktopManager.kodi.enable = true;
