@@ -22,6 +22,25 @@
     "${inputs.nixpkgs-unstable}/nixos/modules/services/hardware/supergfxd.nix"
     "${inputs.nixpkgs-unstable}/nixos/modules/services/hardware/asusd.nix"
   ];
+  
+  # Enable networking
+  networking.networkmanager.enable = true;
+  
+  networking.hostName = "zephyrus"; # Define your hostname.
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  # Configure network proxy if necessary
+  # networking.proxy.default = "http://user:password@proxy:port/";
+  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
 
   # Set your time zone.
   time.timeZone = "Asia/Ho_Chi_Minh";
