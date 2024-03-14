@@ -23,7 +23,6 @@
       "widget.use-xdg-desktop-portal.file-picker" = 1;
     };
   };
-  
+
   programs.chromium.enable = true;
 }
-

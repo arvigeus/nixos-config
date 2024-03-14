@@ -1,12 +1,10 @@
 { ... }:
 
 {
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = "0"; # increase font size
   boot.loader.efi.canTouchEfiVariables = true;
   boot.tmp.cleanOnBoot = true;
-
 
   boot.kernelParams = [
     "mitigations=off"
@@ -22,4 +20,3 @@
 
   boot.initrd.luks.devices."luks-defb6e58-f883-4c98-b933-5d62f344bb9b".device = "/dev/disk/by-uuid/defb6e58-f883-4c98-b933-5d62f344bb9b";
 }
-

@@ -12,6 +12,8 @@
     protonup-qt
     protontricks
     yuzu-mainline
+
+    # Misc
     iconv # FIXME: https://github.com/arvigeus/nixos-config/issues/37
   ];
 
@@ -26,4 +28,3 @@
 
   programs.gamemode.enable = true;
 }
-
