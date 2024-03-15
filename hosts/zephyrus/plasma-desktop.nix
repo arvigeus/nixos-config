@@ -28,7 +28,6 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1"; # Wayland support in Chromium and Electron based applications
     MOZ_USE_XINPUT2 = "1";
-    # MANGOHUD = "1"; # Enable for all Vulkan games
   };
 
   xdg.portal.enable = true;

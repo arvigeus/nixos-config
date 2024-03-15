@@ -11,6 +11,7 @@
     ./web.nix
     ./gaming.nix
     ./development.nix
+    ./specializations
   ];
 
   nixpkgs = {
