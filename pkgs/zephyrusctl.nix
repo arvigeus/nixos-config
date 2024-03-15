@@ -13,37 +13,37 @@ pkgs.writeShellApplication {
   
   text = ''
     function powersave() {
-      ${pkgs.asusctl}/bin/asusctl -c 100
-      ${pkgs.asusctl}/bin/asusctl profile -P Quiet
+      ${pkgs.unstable.asusctl}/bin/asusctl -c 100
+      ${pkgs.unstable.asusctl}/bin/asusctl profile -P Quiet
       ${pkgs.libsForQt5.libkscreen}/bin/kscreen-doctor output.eDP-2.mode.21 &> /dev/null
       sudo ${pkgs.powertop}/bin/powertop --auto-tune &> /dev/null
       printf "Battery Max: <b>100%%</b>\n"
-      echo "<b>$(${pkgs.supergfxctl}/bin/supergfxctl --mode Integrated)</b>"
+      echo "<b>$(${pkgs.unstable.supergfxctl}/bin/supergfxctl --mode Integrated)</b>"
     }
 
     function balanced() {
-      ${pkgs.asusctl}/bin/asusctl -c 75
-      ${pkgs.asusctl}/bin/asusctl profile -P Balanced
+      ${pkgs.unstable.asusctl}/bin/asusctl -c 75
+      ${pkgs.unstable.asusctl}/bin/asusctl profile -P Balanced
       ${pkgs.libsForQt5.libkscreen}/bin/kscreen-doctor output.eDP-2.mode.0 &> /dev/null
       printf "Battery Max: <b>75%%</b>\n"
-      echo "<b>$(${pkgs.supergfxctl}/bin/supergfxctl --mode Hybrid)</b>"
+      echo "<b>$(${pkgs.unstable.supergfxctl}/bin/supergfxctl --mode Hybrid)</b>"
     }
 
     function performance() {
-      ${pkgs.asusctl}/bin/asusctl -c 75
-      ${pkgs.asusctl}/bin/asusctl profile -P Performance
+      ${pkgs.unstable.asusctl}/bin/asusctl -c 75
+      ${pkgs.unstable.asusctl}/bin/asusctl profile -P Performance
       ${pkgs.libsForQt5.libkscreen}/bin/kscreen-doctor output.eDP-2.mode.0 &> /dev/null
       printf "Battery Max: <b>75%%</b>\n"
-      echo "<b>$(${pkgs.supergfxctl}/bin/supergfxctl --mode AsusMuxDgpu)</b>"
+      echo "<b>$(${pkgs.unstable.supergfxctl}/bin/supergfxctl --mode AsusMuxDgpu)</b>"
     }
 
     function get_cpu_mode() {
-      ${pkgs.asusctl}/bin/asusctl profile -p | awk '{print $NF}'
+      ${pkgs.unstable.asusctl}/bin/asusctl profile -p | awk '{print $NF}'
     }
 
     function get_gpu_mode() {
       local gpu_mode
-      gpu_mode=$(${pkgs.supergfxctl}/bin/supergfxctl -g)
+      gpu_mode=$(${pkgs.unstable.supergfxctl}/bin/supergfxctl -g)
       [[ "$gpu_mode" == "AsusMuxDgpu" ]] && gpu_mode="Dedicated"
       echo "$gpu_mode"
     }
