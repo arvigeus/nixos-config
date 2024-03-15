@@ -11,7 +11,7 @@
     lightworks
     mkvtoolnix
     ffmpeg
-    subtitleeditor
+    unstable.subtitlecomposer
     audacious
 
     # Custom packages
