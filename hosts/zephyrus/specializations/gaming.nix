@@ -1,10 +1,12 @@
-{ lib, pkgs, ... }:
+{ lib, inputs, ... }:
 
 {
-  # hardware.amdgpu.amdvlk = lib.mkForce false;
+  imports = [ inputs.jovian-nixos.nixosModules.default ];
+  
+  hardware.amdgpu.amdvlk = lib.mkForce false; # Does not work with gamescope
+  services.xserver.displayManager.sddm.enable = lib.mkForce false;
   virtualisation.podman.enable = lib.mkForce false;
   services.xserver.desktopManager.kodi.enable = lib.mkForce false;
-  # services.xserver.displayManager.defaultSession = lib.mkForce "steam";
 
   services.asusd.profileConfig = "Performance";
   services.supergfxd = {
@@ -14,59 +16,21 @@
     };
   };
 
-  systemd.user.services.steam-session = {
-    enable = true;
-    description = "Start Steam in Big Picture mode";
-    wantedBy = [ "graphical-session.target" ];
-    after = [ "graphical-session-pre.target" ];
-    partOf = [ "graphical-session.target" ];
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-      ExecStart = "${pkgs.steam}/bin/steam -gamepadui -steamdeck";
+  jovian = {
+    hardware.has.amd.gpu = true;
+    steam = {
+      enable = true;
+      user = "arvigeus";
+      autoStart = true;
+      desktopSession = "plasmawayland";
+    };
+    decky-loader = {
+      enable = false;
+      user = "arvigeus";
+      extraPythonPackages = [];
+      extraPackages = [];
     };
   };
-
-  # programs.steam = {
-  #   gamescopeSession = {
-  #     enable = true;
-  #     env = {
-  #       WLR_RENDERER = "vulkan";
-  #       DXVK_HDR = "1";
-  #       ENABLE_GAMESCOPE_WSI = "1";
-  #       WINE_FULLSCREEN_FSR = "1";
-  #       # Games allegedly prefer X11
-  #       SDL_VIDEODRIVER = "x11";
-  #     };
-  #     args = [
-  #       "--xwayland-count 2"
-  #       "--expose-wayland"
-
-  #       "-e" # Enable steam integration
-  #       "--steam"
-
-  #       "--adaptive-sync"
-  #       "--hdr-enabled"
-  #       "--hdr-itm-enable"
-
-  #       # External monitor
-  #       "--prefer-output HDMI-A-1"
-  #       "--output-width 2560"
-  #       "--output-height 1440"
-  #       # "-r 75"
-
-  #       # Laptop display
-  #       # "--prefer-output eDP-1"
-  #       # "--output-width 2560"
-  #       # "--output-height 1600"
-  #       # "-r 120"
-        
-  #       "--prefer-vk-device" # lspci -nn | grep VGA
-  #       "1002:73ef" # Dedicated
-  #       # 1002:1681 # Integrated
-  #     ];
-  #   };
-  # };
 
   environment.sessionVariables = {
     MANGOHUD = "1"; # Enable for all Vulkan games
