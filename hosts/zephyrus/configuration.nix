@@ -5,22 +5,11 @@
 { config, pkgs, inputs, ... }:
 
 {
-  # FIXME: Remove this after migrating to 24.05
-  disabledModules = [
-    "services/hardware/supergfxd.nix"
-    "services/hardware/asusd.nix"
-  ];
-
   imports = with inputs.nixos-hardware.nixosModules; [
     common-cpu-amd-pstate
     common-gpu-amd
     common-pc-ssd
     asus-battery
-  ]
-  # FIXME: Remove this after migrating to 24.05
-  ++ [
-    "${inputs.nixpkgs-unstable}/nixos/modules/services/hardware/supergfxd.nix"
-    "${inputs.nixpkgs-unstable}/nixos/modules/services/hardware/asusd.nix"
   ];
   
   # Enable networking
@@ -79,8 +68,7 @@
   services.asusd = {
     enable = true;
     enableUserService = true;
-    # FIXME: Remove this after migrating to 24.05
-    package = pkgs.unstable.asusctl;
+    package = pkgs.asusctl;
   };
 
   # Battery

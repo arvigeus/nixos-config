@@ -11,15 +11,15 @@
     # The most widely used is `github:owner/name/reference`,
     # which represents the GitHub repository URL + branch/commit-id/tag.
 
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11"; # NixOS release channel
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable"; # NixOS unstable channel
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # NixOS unstable channel
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11"; # NixOS release channel
     nixpkgs-master.url = "github:NixOS/nixpkgs/master";
-    # Also see the 'unstable-packages' and 'master-packages' overlays at 'overlays/default.nix'.
+    # Also see the 'stable-packages' and 'master-packages' overlays at 'overlays/default.nix'.
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master"; # NixOS hardware channel
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11"; # Home Manager release channel
+      url = "github:nix-community/home-manager"; # Home Manager release channel
       # The `follows` keyword in inputs is used for inheritance.
       # Here, `inputs.nixpkgs` of home-manager is kept consistent with
       # the `inputs.nixpkgs` of the current flake,
@@ -33,7 +33,7 @@
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

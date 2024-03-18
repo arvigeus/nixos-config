@@ -3,15 +3,13 @@
 {
   environment.systemPackages = with pkgs; [
     vlc
-    gimp-with-plugins
-    gimpPlugins.lqrPlugin
-    gimpPlugins.gap
+    stable.gimp-with-plugins # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/graphics/gimp/plugins/default.nix
     qbittorrent-qt5
     yt-dlp
     lightworks
     mkvtoolnix
     ffmpeg
-    unstable.subtitlecomposer
+    subtitlecomposer
     audacious
 
     # Custom packages
