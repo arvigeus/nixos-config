@@ -25,10 +25,8 @@
       desktopSession = "plasmawayland";
     };
     decky-loader = {
-      enable = false;
+      enable = true;
       user = "arvigeus";
-      extraPythonPackages = [];
-      extraPackages = [];
     };
   };
 
