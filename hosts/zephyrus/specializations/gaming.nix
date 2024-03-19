@@ -25,6 +25,8 @@
       desktopSession = "plasmawayland";
     };
     decky-loader = {
+      # Steam > Settings > System > Enable Developer Mode
+      # Steam > Developer > CEF Remote Debugging
       enable = true;
       user = "arvigeus";
     };
