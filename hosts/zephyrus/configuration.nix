@@ -6,9 +6,7 @@
 
 {
   imports = with inputs.nixos-hardware.nixosModules; [
-    common-cpu-amd-pstate
-    common-gpu-amd
-    common-pc-ssd
+    asus-zephyrus-ga402
     asus-battery
   ];
   
