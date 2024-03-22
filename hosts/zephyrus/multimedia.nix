@@ -7,6 +7,7 @@
     qbittorrent-qt5
     yt-dlp
     lightworks
+    davinci-resolve
     mkvtoolnix
     ffmpeg
     subtitlecomposer

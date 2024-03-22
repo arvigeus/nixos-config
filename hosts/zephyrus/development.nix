@@ -36,4 +36,12 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+
+  virtualisation.libvirtd.enable = true;
+  users.users.arvigeus.extraGroups = [ "libvirtd" ];
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "arvigeus" ];
+  virtualisation.virtualbox.host.enableExtensionPack = true;
+  virtualisation.virtualbox.guest.enable = true;
 }
