@@ -123,6 +123,7 @@
     unrar
     whois
     libnotify
+    icoutils # Display exe icons
 
     # Containers
     appimage-run

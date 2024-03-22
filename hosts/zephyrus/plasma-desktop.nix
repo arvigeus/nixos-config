@@ -34,12 +34,7 @@
 
   xdg.portal.enable = true;
 
-  environment.systemPackages = with pkgs; [
-    pinentry-qt
-    icoutils # Display exe icons
-  ]
-  # KDE
-  ++ (with libsForQt5; [
+  environment.systemPackages = with pkgs.libsForQt5; [
     kate
     kget
     kaccounts-integration
@@ -53,7 +48,9 @@
     kwallet-pam
     kwalletmanager
     kdenlive
-  ]);
+  ];
+
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-qt;
 
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true; # KDE Partition Manager
