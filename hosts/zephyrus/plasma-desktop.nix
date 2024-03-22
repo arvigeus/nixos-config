@@ -17,14 +17,14 @@
     enable = true;
     enableHidpi = true;
   };
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   security.pam.services.ssdm.enableKwallet = true;
   security.pam.services.ssdm.gnupg.enable = true;
 
   # Enable Wayland
   services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
+  services.xserver.displayManager.defaultSession = "plasma";
   programs.dconf.enable = true; # fix theming issues in GTK apps
 
   environment.sessionVariables = {
@@ -34,7 +34,7 @@
 
   xdg.portal.enable = true;
 
-  environment.systemPackages = with pkgs.libsForQt5; [
+  environment.systemPackages = with pkgs.kdePackages; [
     kate
     kget
     kaccounts-integration
@@ -48,6 +48,11 @@
     kwallet-pam
     kwalletmanager
     kdenlive
+  ];
+
+  environment.plasma6.excludePackages = with pkgs.kdePackages; [
+    elisa
+    oxygen
   ];
 
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-qt;

@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ config, ... }:
 
 {
   programs.plasma = {
@@ -11,7 +11,6 @@
 
     configFile = {
       "dolphinrc"."General"."BrowseThroughArchives" = true;
-      "kcminputrc"."Libinput.1267.12699.ASUE120A:00 04F3:319B Touchpad"."TapToClick" = true;
       "kwinrulesrc"."1"."Description" = "Window settings for firefox";
       "kwinrulesrc"."1"."above" = true;
       "kwinrulesrc"."1"."aboverule" = 2;
@@ -41,9 +40,9 @@
       "kwinrulesrc"."78315bde-2c1a-488f-bbee-7b8dfbf4cc3a"."wmclassmatch" = 1;
       "kwinrulesrc"."General"."count" = 1;
       "kwinrulesrc"."General"."rules" = 1;
-      "kxkbrc"."Layout"."Options" = "grp:alt_shift_toggle,terminate:ctrl_alt_bksp"; # Kill server
       "kxkbrc"."Layout"."DisplayNames" = ",";
       "kxkbrc"."Layout"."LayoutList" = "us,bg";
+      "kxkbrc"."Layout"."Options" = "terminate:ctrl_alt_bksp,grp:alt_shift_toggle";
       "kxkbrc"."Layout"."ResetOldOptions" = true;
       "kxkbrc"."Layout"."SwitchMode" = "Window";
       "kxkbrc"."Layout"."Use" = true;

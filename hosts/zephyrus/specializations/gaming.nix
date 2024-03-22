@@ -25,7 +25,7 @@
       enable = true;
       user = "arvigeus";
       autoStart = true;
-      desktopSession = "plasmawayland";
+      desktopSession = "plasma";
     };
     decky-loader = {
       # Steam > Settings > System > Enable Developer Mode
