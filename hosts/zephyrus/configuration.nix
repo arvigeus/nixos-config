@@ -113,6 +113,7 @@
     gnumake
     clinfo
     vulkan-tools
+    wayland-utils
     glxinfo
     pciutils
     fwupd
