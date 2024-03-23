@@ -5,7 +5,6 @@
     nil
     nixpkgs-fmt
     lapce
-    helix
     dotnet-sdk
     nodejs_18
     rustup

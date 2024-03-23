@@ -119,4 +119,6 @@
       "todo-tree.highlights.customHighlight.BUG.gutterIcon" = true;
     };
   };
+
+  programs.helix.enable = true;
 }

@@ -25,4 +25,6 @@
 			controls = "menu,space,subtitles,<has_many_audio>audio,<has_many_video>video,<has_many_edition>editions,<stream>stream-quality";
 		};
 	};
+
+	programs.yt-dlp.enable = true;
 }
