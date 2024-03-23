@@ -11,6 +11,7 @@
 
     configFile = {
       "dolphinrc"."General"."BrowseThroughArchives" = true;
+      "kwinrc"."Windows"."BorderlessMaximizedWindows" = true; # Requires Application Title Bar (https://store.kde.org/p/2135509)
       "kwinrulesrc"."1"."Description" = "Window settings for firefox";
       "kwinrulesrc"."1"."above" = true;
       "kwinrulesrc"."1"."aboverule" = 2;
