@@ -54,7 +54,6 @@
   hardware.enableRedistributableFirmware = true;
 
   # AMD GPU Configuration
-  hardware.amdgpu.amdvlk = true;
   hardware.amdgpu.opencl = true;
   hardware.amdgpu.loadInInitrd = true;
 

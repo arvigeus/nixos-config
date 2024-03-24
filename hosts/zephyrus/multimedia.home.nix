@@ -8,8 +8,7 @@
 		defaultProfiles = [ "high-quality" ]; # https://github.com/mpv-player/mpv/blob/master/etc/builtin.conf
 		config = {
 			# https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst
-			vo = "dmabuf-wayland"; # https://github.com/mpv-player/mpv/blob/master/DOCS/man/vo.rst
-			# vo = "gpu-next";
+			vo = "gpu-next";
 			hwdec = "auto-safe";
 			gpu-api = "vulkan";
 			sub-auto = "fuzzy";
