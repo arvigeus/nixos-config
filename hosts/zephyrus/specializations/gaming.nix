@@ -3,7 +3,6 @@
 {
   imports = [ inputs.jovian-nixos.nixosModules.default ];
   
-  hardware.amdgpu.amdvlk = lib.mkForce false; # Does not work with gamescope
   services.xserver.displayManager.sddm.enable = lib.mkForce false;
 
   # Disable services
