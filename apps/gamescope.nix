@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  programs.gamescope = {
+    enable = true;
+  };
+}

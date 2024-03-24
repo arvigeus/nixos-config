@@ -1,12 +1,6 @@
 { inputs, outputs, ... }:
 
 {
-  imports = [
-    ./plasma-desktop.home.nix
-    ./multimedia.home.nix
-    ./development.home.nix
-  ];
-
   nixpkgs = {
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):

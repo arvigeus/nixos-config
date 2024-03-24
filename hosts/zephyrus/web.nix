@@ -16,13 +16,8 @@
     thunderbird
   ];
 
-  programs.firefox = {
-    enable = true;
-    preferences = {
-      # Use the native file picker.
-      "widget.use-xdg-desktop-portal.file-picker" = 1;
-    };
-  };
-
-  programs.chromium.enable = true;
+  home-manager.users.arvigeus.imports = [
+    ../../apps/firefox.nix
+    ../../apps/chromium.nix
+  ];
 }

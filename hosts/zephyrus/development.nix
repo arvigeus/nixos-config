@@ -24,6 +24,11 @@
     virt-manager
   ];
 
+  home-manager.users.arvigeus.imports = [
+    ../../apps/vscode.nix
+    ../../apps/helix.nix
+  ];
+
   virtualisation = {
     podman = {
       enable = true;

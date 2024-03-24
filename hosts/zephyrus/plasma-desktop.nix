@@ -61,4 +61,8 @@
   programs.partition-manager.enable = true; # KDE Partition Manager
 
   home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+
+  home-manager.users.arvigeus.imports = [
+    ../../apps/plasma-desktop.nix
+  ];
 }

@@ -16,5 +16,10 @@
     rename-by-metadata
   ];
 
+  home-manager.users.arvigeus.imports = [
+    ../../apps/mpv.nix
+    ../../apps/yt-dlp.nix
+  ];
+
   services.xserver.desktopManager.kodi.enable = true;
 }
