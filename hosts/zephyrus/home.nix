@@ -10,6 +10,7 @@
       outputs.overlays.master-packages
 
       inputs.nix-vscode-extensions.overlays.default
+      inputs.nur.overlay
     ];
     # Configure your nixpkgs instance
     config = {
