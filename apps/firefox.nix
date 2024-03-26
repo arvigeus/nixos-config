@@ -8,17 +8,26 @@
         id = 0;
         name = "default";
         isDefault = true;
-        bookmarks = { };
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-          multi-account-containers
+        # https://github.com/nix-community/nur-combined/blob/master/repos/rycee/pkgs/firefox-addons/generated-firefox-addons.nix
+        extensions = (with pkgs.nur.repos.rycee.firefox-addons; [
           ublock-origin
-          ublacklist
+          multi-account-containers
           bitwarden
-          enhancer-for-youtube
           plasma-integration
+
+          react-devtools
+          wappalyzer
+          # web-developer
+          # webhint
+
+          enhancer-for-youtube
           search-by-image
-        ];
-        bookmarks = { };
+          grammarly
+          
+          honey
+          # cultivate
+          # the-camelizer
+        ]);
         settings = {
           "widget.use-xdg-desktop-portal.file-picker" = 1;
           "identity.fxaccounts.enabled" = false;
@@ -32,6 +41,44 @@
         # userChrome = ''
         #   .titlebar-buttonbox-container {display:none !important;}
         # '';
+        search = {
+          force = true; # allows this setting to work
+          engines = {
+            "Phind" = {
+              urls = [{ template = "https://www.phind.com/search?q={searchTerms}"; }];
+              iconUpdateURL = "https://www.phind.com/favicon.ico";
+              # updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@nw" ];
+            };
+            
+            "MyNixOS" = {
+              urls = [{
+                template = "https://mynixos.com/search";
+                params = [
+                  { name = "q"; value = "{searchTerms}"; }
+                ];
+              }];
+              iconUpdateURL = "https://mynixos.com/favicon.ico";
+              definedAliases = [ "@np" ];
+            };
+
+            "NixOS Wiki" = {
+              urls = [{ template = "https://nixos.wiki/index.php?search={searchTerms}"; }];
+              icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              definedAliases = [ "@nw" ];
+            };
+
+            "Kagi" = {
+              urls = [{ template = "https://www.kagi.com/search?q={searchTerms}"; }];
+              iconUpdateURL = "https://www.kagi.com/favicon.ico";
+              # updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = [ "@k" ];
+            };
+
+            "Bing".metaData.hidden = true;
+            "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
+          };
+        };
       };
     };
   };
