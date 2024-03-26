@@ -8,12 +8,29 @@
 		defaultProfiles = [ "high-quality" ]; # https://github.com/mpv-player/mpv/blob/master/etc/builtin.conf
 		config = {
 			# https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst
+			# UI
+			autofit = "70%";
+
+			# Video
 			vo = "gpu-next";
-			hwdec = "auto-safe";
 			gpu-api = "vulkan";
+			hwdec = "auto-safe";
+
+      # Audio
+      ao = "pipewire";
+      alang = "jpn,jp,eng,en";
+
+			# Subtitles
+			slang = "eng,en";
 			sub-auto = "fuzzy";
-			alang = "jpn,en";
-			slang = "en";
+
+      # Screenshots
+      screenshot-directory = "~/Pictures";
+      screenshot-template = "mpv-%f-%wH.%wM.%wS.%wT-#%#00n"; # name-hour-minute-second-millisecond-ssnumb
+
+      # Shaders
+      glsl-shader = "~~/shaders/default.glsl";
+      deband = "yes";
 		};
 		# bindings = {
 		# 	"+" = "add volume 2";
@@ -24,4 +41,9 @@
 			controls = "menu,space,subtitles,<has_many_audio>audio,<has_many_video>video,<has_many_edition>editions,<stream>stream-quality";
 		};
 	};
+
+  home.file = {
+		# https://github.com/iwalton3/default-shader-pack/tree/master/shaders
+    ".config/mpv/shaders/default.glsl".source = "${pkgs.mpv-shim-default-shaders}/share/mpv-shim-default-shaders/shaders/FSR.glsl";
+  };
 }
