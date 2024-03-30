@@ -9,6 +9,7 @@
 		config = {
 			# https://github.com/mpv-player/mpv/blob/master/DOCS/man/options.rst
 			# UI
+			fullscreen = "yes";
 			autofit = "70%";
 
 			# Video
