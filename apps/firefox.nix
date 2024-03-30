@@ -15,8 +15,8 @@
 
           react-devtools
           wappalyzer
-          # web-developer
-          # webhint
+          web-developer
+          webhint
 
           enhancer-for-youtube
           search-by-image
