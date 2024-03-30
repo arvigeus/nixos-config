@@ -2,8 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    nil
-    nixpkgs-fmt
     lapce
     dotnet-sdk
     nodejs_18

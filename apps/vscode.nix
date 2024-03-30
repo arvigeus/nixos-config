@@ -46,6 +46,10 @@
       jetpack-io.devbox
       arrterian.nix-env-selector
 
+      # Bash
+      mads-hartmann.bash-ide-vscode
+      mkhl.shfmt
+
       # Testing
       vitest.explorer
       ms-playwright.playwright
@@ -60,7 +64,6 @@
       ms-vscode.remote-explorer
       ms-vsliveshare.vsliveshare
       codeforge.remix-forge
-      jackardios.vscode-css-to-tailwindcss
       amodio.toggle-excluded-files
     ]);
 
@@ -76,17 +79,24 @@
       "git.confirmSync" = false;
       "git.enableCommitSigning" = true;
 
-      "editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[json].editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[javascript].editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[typescript].editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[typescriptreact].editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[jsonc].editor.defaultFormatter" = "esbenp.prettier-vscode";
-      "[markdown].editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[html]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[css]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[markdown]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[javascript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[json]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[jsonc]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[nix]"."editor.defaultFormatter" = "jnoortheen.nix-ide";
+      "[scss]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[typescript]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
+      "[typescriptreact]"."editor.defaultFormatter" = "esbenp.prettier-vscode";
 
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
-      #"nix.formatterPath" = "nixpkgs-fmt";
+      "nix.formatterPath" = "${pkgs.alejandra}/bin/alejandra";
+      "nix.serverPath" = "${pkgs.nil}/bin/nil";
+      "nix.serverSettings"."nil"."formatting"."command" = ["${pkgs.alejandra}/bin/alejandra"];
+
+      "bashIde.shellcheckPath" = "${pkgs.shellcheck}/bin/shellcheck";
+      "shfmt.executablePath" = "${pkgs.shfmt}/bin/shfmt";
 
       "errorLens.gutterIconsEnabled" = true;
       "errorLens.messageMaxChars" = 0;
