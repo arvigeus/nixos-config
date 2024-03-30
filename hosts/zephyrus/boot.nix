@@ -1,6 +1,4 @@
-{ ... }:
-
-{
+{...}: {
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.consoleMode = "0"; # increase font size
   boot.loader.efi.canTouchEfiVariables = true;

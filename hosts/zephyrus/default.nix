@@ -1,6 +1,4 @@
-{ outputs, ... }:
-
-{
+{outputs, ...}: {
   imports = [
     ./boot.nix
     ./configuration.nix
@@ -35,4 +33,3 @@
     ];
   };
 }
-

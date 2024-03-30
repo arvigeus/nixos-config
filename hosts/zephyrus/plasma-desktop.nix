@@ -1,6 +1,8 @@
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   # Configure keymap in X11
   services.xserver = {
     xkb = {
@@ -60,7 +62,7 @@
   programs.kdeconnect.enable = true;
   programs.partition-manager.enable = true; # KDE Partition Manager
 
-  home-manager.sharedModules = [ inputs.plasma-manager.homeManagerModules.plasma-manager ];
+  home-manager.sharedModules = [inputs.plasma-manager.homeManagerModules.plasma-manager];
 
   home-manager.users.arvigeus.imports = [
     ../../apps/plasma-desktop.nix

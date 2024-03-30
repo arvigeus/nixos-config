@@ -1,8 +1,10 @@
-{ lib, inputs, ... }:
-
 {
-  imports = [ inputs.jovian-nixos.nixosModules.default ];
-  
+  lib,
+  inputs,
+  ...
+}: {
+  imports = [inputs.jovian-nixos.nixosModules.default];
+
   services.xserver.displayManager.sddm.enable = lib.mkForce false;
 
   # Disable services

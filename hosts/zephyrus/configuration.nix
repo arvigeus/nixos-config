@@ -1,18 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = with inputs.nixos-hardware.nixosModules; [
     asus-zephyrus-ga402
     asus-battery
   ];
-  
+
   # Enable networking
   networking.networkmanager.enable = true;
-  
+
   networking.hostName = "zephyrus"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -50,7 +51,7 @@
   # Enable CUPS to print documents.
   # services.printing.enable = true;
 
-  # Enables proprietary firmware for enhanced hardware support 
+  # Enables proprietary firmware for enhanced hardware support
   hardware.enableRedistributableFirmware = true;
 
   # AMD GPU Configuration
@@ -126,14 +127,14 @@
 
     # Containers
     appimage-run
-    
+
     # Custom packages
     zephyrusctl
   ];
 
   services.flatpak.enable = true;
   fonts.fontDir.enable = true; # allow Flatpak apps to use system fonts
-  
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
@@ -154,9 +155,9 @@
     ];
     fontconfig = {
       defaultFonts = {
-        monospace = [ "Source Code Pro" ];
-        sansSerif = [ "Source Sans Pro" ];
-        serif = [ "Source Serif Pro" ];
+        monospace = ["Source Code Pro"];
+        sansSerif = ["Source Sans Pro"];
+        serif = ["Source Serif Pro"];
       };
     };
   };
@@ -187,4 +188,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 }
-

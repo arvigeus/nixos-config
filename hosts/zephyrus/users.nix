@@ -1,6 +1,8 @@
-{ inputs, outputs, ... }:
-
 {
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -11,7 +13,7 @@
   users.users.arvigeus = {
     isNormalUser = true;
     description = "Nikolay Stoynov";
-    extraGroups = [ "networkmanager" "wheel" "media" ];
+    extraGroups = ["networkmanager" "wheel" "media"];
     openssh.authorizedKeys.keys = [
       # TODO: Add your SSH public key(s) here
     ];
@@ -26,7 +28,7 @@
   home-manager.backupFileExtension = "bak";
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs outputs; };
+    extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
       arvigeus = import ./home.nix;

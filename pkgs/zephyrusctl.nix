@@ -1,16 +1,15 @@
-{ pkgs }:
-
+{pkgs}:
 pkgs.writeShellApplication {
   name = "zephyrusctl";
   runtimeInputs = with pkgs; [
-    asusctl 
-    supergfxctl 
-    powertop 
-    libsForQt5.libkscreen 
-    libsForQt5.kdialog 
-    libnotify 
+    asusctl
+    supergfxctl
+    powertop
+    libsForQt5.libkscreen
+    libsForQt5.kdialog
+    libnotify
   ];
-  
+
   text = ''
     function powersave() {
       ${pkgs.asusctl}/bin/asusctl -c 100

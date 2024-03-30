@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     lapce
     dotnet-sdk
@@ -40,10 +38,10 @@
   };
 
   virtualisation.libvirtd.enable = true;
-  users.users.arvigeus.extraGroups = [ "libvirtd" ];
+  users.users.arvigeus.extraGroups = ["libvirtd"];
 
   virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "arvigeus" ];
+  users.extraGroups.vboxusers.members = ["arvigeus"];
   virtualisation.virtualbox.host.enableExtensionPack = true;
   virtualisation.virtualbox.guest.enable = true;
 }

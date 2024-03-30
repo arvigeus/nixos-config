@@ -1,14 +1,11 @@
-{ ... }:
-
-{
+{...}: {
   specialisation = {
     gaming = {
-      inheritParentConfig = true; # FIXME
+      inheritParentConfig = true; # Allows for switching to normal desktop
       configuration = {
-        system.nixos.tags = [ "gaming" ];
-        imports = [ ./gaming.nix ];
+        system.nixos.tags = ["gaming"];
+        imports = [./gaming.nix];
       };
     };
   };
 }
-

@@ -1,5 +1,4 @@
-{ pkgs }:
-
+{pkgs}:
 pkgs.writeShellApplication {
   name = "rename-by-metadata";
   runtimeInputs = with pkgs; [

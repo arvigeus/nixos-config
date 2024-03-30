@@ -1,6 +1,8 @@
-{ inputs, outputs, ... }:
-
 {
+  inputs,
+  outputs,
+  ...
+}: {
   nixpkgs = {
     overlays = [
       # Add overlays your own flake exports (from overlays and pkgs dir):
