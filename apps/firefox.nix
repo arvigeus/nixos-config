@@ -29,12 +29,29 @@
         settings = {
           "widget.use-xdg-desktop-portal.file-picker" = 1;
           "identity.fxaccounts.enabled" = false;
-          "privacy.trackingprotection.enabled" = true;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.shell.checkDefaultBrowser" = false;
           "browser.shell.defaultBrowserCheckCount" = 1;
           "browser.startup.page" = 3; # Restore session
-          "browser.tabs.inTitlebar" = 0;
+          "browser.tabs.inTitlebar" = 0; # Use system's titlebar
+
+          # Enable HTTPS-Only Mode
+          "dom.security.https_only_mode" = true;
+          "dom.security.https_only_mode_ever_enabled" = true;
+
+          # Privacy settings
+          "privacy.donottrackheader.enabled" = true;
+          "privacy.trackingprotection.enabled" = true;
+          "privacy.trackingprotection.socialtracking.enabled" = true;
+          "privacy.partition.network_state.ocsp_cache" = true;
+
+          # Disable Pocket Integration
+          "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+          "extensions.pocket.enabled" = false;
+          "extensions.pocket.api" = "";
+          "extensions.pocket.oAuthConsumerKey" = "";
+          "extensions.pocket.showHome" = false;
+          "extensions.pocket.site" = "";
         };
         # userChrome = ''
         #   .titlebar-buttonbox-container {display:none !important;}
