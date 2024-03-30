@@ -21,6 +21,7 @@
   ];
 
   home-manager.users.arvigeus.imports = [
+    ../../apps/bash.nix
     ../../apps/vscode.nix
     ../../apps/helix.nix
   ];
