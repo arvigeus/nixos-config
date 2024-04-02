@@ -11,9 +11,10 @@ pkgs.writeShellApplication {
     mv="${pkgs.coreutils}/bin/mv"
     echo="${pkgs.coreutils}/bin/echo"
     shopt -s nullglob
-    for file in *.{heic,jpg,mp4,mov} ; do
+    for file in *.{heic,jpg,jpeg,mp4,mov,HEIC,JPG,JPEG,MP4,MOV} ; do
       datetime=$($exiftool -q -d '%Y-%m-%d-%H-%M-%S' -CreateDate "$file" | awk -F ': ' '{print $2}')
-      ext="''${file##*.},,"
+      ext="''${file##*.}"
+      ext="''${ext,,}"
       if [ -n "$datetime" ]; then
         new_name="''${datetime}.''${ext}"
         if [ "$new_name" != "$file" ]; then
