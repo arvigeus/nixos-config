@@ -33,7 +33,7 @@ in {
     };
 
     bindings = {
-      # https://mpv.io/manual/master/
+      # https://github.com/mpv-player/mpv/blob/master/etc/input.conf
       "MOUSE_BTN2" = "script-binding uosc/menu-blurred";
       "tab" = "script-binding uosc/toggle-ui";
       "Shift+ENTER" = "script-binding uosc/download-subtitles";
