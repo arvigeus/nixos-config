@@ -3,11 +3,12 @@
     enable = true;
 
     shortcuts = {
-      "asusctl.desktop"."_launch" = "Launch (6)"; # Fn + F5
-      "zephyrusctl.desktop"."_launch" = "Launch (3)"; # M4
+      "services/asusctl.desktop"."_launch" = "Launch (4)"; # Fn + F5
+      "services/zephyrusctl.desktop"."_launch" = "Launch (1)"; # M4
     };
 
     configFile = {
+      "ksmserverrc"."General"."loginMode".value = "emptySession";
       "dolphinrc"."General"."BrowseThroughArchives".value = true;
       "kdeglobals"."General"."accentColorFromWallpaper".value = true;
       "kdeglobals"."KDE"."SingleClick".value = true;
