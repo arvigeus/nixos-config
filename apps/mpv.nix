@@ -20,7 +20,7 @@ in {
       alang = "jpn,jp,eng,en";
 
       # Subtitles
-      slang = "eng,en,bg,vn";
+      slang = "eng,en,bg,vi,vn";
       sub-auto = "fuzzy";
 
       # Screenshots
@@ -68,7 +68,6 @@ in {
       "Ctrl+- add audio-delay -0.10" = "#! Audio > Delay > Decrease Audio Delay";
       "# set audio-delay 0" = "#! Audio > Delay > Reset Audio Delay";
 
-      "y script-binding uosc/load-subtitles" = "#! Subtitles > Load";
       "Shift+g add sub-scale +0.05" = "#! Subtitles > Scale > Increase Subtitle Scale";
       "Shift+f add sub-scale -0.05" = "#! Subtitles > Scale > Decrease Subtitle Scale";
       "# set sub-scale 1" = "#! Subtitles > Scale > Reset Subtitle Scale";
