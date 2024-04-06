@@ -69,28 +69,28 @@
       };
 
       git_branch = {
-        symbol = "[](bold bright-blue)";
+        symbol = "[󰊢](bold #f15639)";
         format = "[ $symbol $branch(:$remote_branch)]($style)";
-        style = "bold italic bright-blue";
+        style = "bold white";
       };
 
       git_status = {
-        style = "italic bright-blue";
+        style = "bold white";
         format = " ([$ahead_behind$staged$modified$untracked$renamed$deleted$conflicted$stashed]($style))";
-        conflicted = "[◪◦](italic bright-magenta)";
-        ahead = "[▲│[\${count}](bold white)│](italic green)";
-        behind = "[▽│[\${count}](bold white)│](italic red)";
-        diverged = "[◇ ▲┤[\${ahead_count}](regular white)│▽┤[\${behind_count}](regular white)│](italic bright-magenta)";
-        untracked = "[◌◦](italic bright-yellow)";
-        stashed = "[◦◫◦](italic white)";
-        modified = "[●◦](italic yellow)";
-        staged = "[■┤[$count](bold white)│](italic bright-cyan)";
-        renamed = "[◎◦](italic bright-blue)";
-        deleted = "[✕](italic red)";
+        conflicted = "[◪◦](bold bright-magenta)";
+        ahead = "[▲│[\${count}](bold white)│](bold green)";
+        behind = "[▽│[\${count}](bold white)│](bold red)";
+        diverged = "[◇ ▲┤[\${ahead_count}](regular white)│▽┤[\${behind_count}](regular white)│](bold bright-magenta)";
+        untracked = "[◌◦](bold bright-yellow)";
+        stashed = "[◦◫◦](bold white)";
+        modified = "[●◦](bold yellow)";
+        staged = "[■┤[$count](bold white)│](bold bright-cyan)";
+        renamed = "[◎◦](bold bright-blue)";
+        deleted = "[✕](bold red)";
       };
 
       jobs = {
-        symbol = "[▶](blue italic)";
+        symbol = "[▶](blue bold)";
         format = " [$symbol $number]($style)";
         style = "white";
       };
