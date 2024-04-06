@@ -14,8 +14,19 @@
     thunderbird
   ];
 
-  home-manager.users.arvigeus.imports = [
-    ../../apps/firefox.nix
+  imports = [
     ../../apps/chromium.nix
   ];
+
+  home-manager.users.arvigeus = {
+    imports = [
+      ../../apps/firefox.nix
+    ];
+
+    xdg.mimeApps = {
+      defaultApplications."x-scheme-handler/http" = ["firefox.desktop" "chromium.desktop"];
+      defaultApplications."x-scheme-handler/https" = ["firefox.desktop" "chromium.desktop"];
+      defaultApplications."text/html" = ["firefox.desktop" "chromium.desktop"];
+    };
+  };
 }

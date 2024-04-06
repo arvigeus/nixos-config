@@ -83,9 +83,15 @@
             };
 
             "NixOS Wiki" = {
-              urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
+              urls = [{template = "https://wiki.nixos.org/w/index.php?search={searchTerms}";}];
               icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = ["@nw"];
+            };
+
+            "GitHub NixOS" = {
+              urls = [{template = "https://github.com/search?q=language%3Anix+NOT+is%3Afork+{searchTerms}&type=code";}];
+              iconUpdateURL = "https://github.com/favicon.ico";
+              definedAliases = ["@gn"];
             };
 
             "Kagi" = {
