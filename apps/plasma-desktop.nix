@@ -2,6 +2,18 @@
   programs.plasma = {
     enable = true;
 
+    workspace = {
+      clickItemTo = "open";
+      lookAndFeel = "org.kde.breezedark.desktop";
+    };
+
+    kwin = {
+      titlebarButtons = {
+        left = ["close" "maximize" "minimize" "application-menu"];
+        right = ["help" "on-all-desktops" "keep-above-windows"];
+      };
+    };
+
     shortcuts = {
       "services/asusctl.desktop"."_launch" = "Launch (4)"; # Fn + F5
       "services/zephyrusctl.desktop"."_launch" = "Launch (1)"; # M4
@@ -12,7 +24,6 @@
       "ksmserverrc"."General"."loginMode".value = "emptySession";
       "dolphinrc"."General"."BrowseThroughArchives".value = true;
       "kdeglobals"."General"."accentColorFromWallpaper".value = true;
-      "kdeglobals"."KDE"."SingleClick".value = true;
       "kglobalshortcutsrc"."KDE Keyboard Layout Switcher"."_k_friendly_name".value = "Keyboard Layout Switcher";
       "kglobalshortcutsrc"."asusctl.desktop"."_k_friendly_name".value = "sprofile -n && notify-send \"Power Profile\" \"$(asusctl profile -p)\"";
       "kglobalshortcutsrc"."zephyrusctl.desktop"."_k_friendly_name".value = "zephyrusctl";
@@ -22,8 +33,6 @@
       "kwalletrc"."Wallet"."First Use".value = false;
       "kwinrc"."Windows"."BorderlessMaximizedWindows".value = true;
       "kwinrc"."Xwayland"."Scale".value = 1;
-      "kwinrc"."org.kde.kdecoration2"."ButtonsOnLeft".value = "XAIF";
-      "kwinrc"."org.kde.kdecoration2"."ButtonsOnRight".value = "HSM";
       "kwinrulesrc"."1"."Description".value = "Window settings for firefox";
       "kwinrulesrc"."1"."above".value = true;
       "kwinrulesrc"."1"."aboverule".value = 2;
