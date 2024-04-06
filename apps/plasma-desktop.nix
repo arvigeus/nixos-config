@@ -5,6 +5,7 @@
     shortcuts = {
       "services/asusctl.desktop"."_launch" = "Launch (4)"; # Fn + F5
       "services/zephyrusctl.desktop"."_launch" = "Launch (1)"; # M4
+      "services/org.kde.kcalc.desktop"."_launch" = []; # KCalc is very eager to hijack M4
     };
 
     configFile = {
@@ -13,7 +14,7 @@
       "kdeglobals"."General"."accentColorFromWallpaper".value = true;
       "kdeglobals"."KDE"."SingleClick".value = true;
       "kglobalshortcutsrc"."KDE Keyboard Layout Switcher"."_k_friendly_name".value = "Keyboard Layout Switcher";
-      "kglobalshortcutsrc"."asusctl.desktop"."_k_friendly_name".value = "\sprofile -n && notify-send \"Power Profile\" \"$(asusctl profile -p)\"";
+      "kglobalshortcutsrc"."asusctl.desktop"."_k_friendly_name".value = "sprofile -n && notify-send \"Power Profile\" \"$(asusctl profile -p)\"";
       "kglobalshortcutsrc"."zephyrusctl.desktop"."_k_friendly_name".value = "zephyrusctl";
       "kscreenlockerrc"."Greeter"."WallpaperPlugin".value = "org.kde.potd";
       "kscreenlockerrc"."Greeter/Wallpaper/org.kde.potd/General"."Provider".value = "bing";
@@ -62,6 +63,23 @@
       "plasma-localerc"."Formats"."LANG".value = "en_US.UTF-8";
     };
   };
+
+  programs.konsole = {
+    enable = true;
+
+    defaultProfile = "default.profile";
+    profiles.default = {
+      name = "default";
+      font = {
+        name = "FiraCode Nerd Font Mono";
+      };
+    };
+  };
+
+  # TODO: Set font (https://github.com/pjones/plasma-manager/issues/87)
+  # programs.kate = {
+  #   enable = true;
+  # };
 
   home = {
     # Fix Wayland cursor size for some apps

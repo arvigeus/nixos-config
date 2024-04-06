@@ -70,7 +70,7 @@
     userSettings = {
       "window.titleBarStyle" = "custom";
       "workbench.colorTheme" = "One Dark Pro Flat";
-      "editor.fontFamily" = "'Fira Code', 'Droid Sans Mono', 'monospace', monospace";
+      "editor.fontFamily" = "'FiraCode Nerd Font', 'FiraCode Nerd Font Mono', 'monospace', monospace";
       "editor.inlineSuggest.enabled" = true;
 
       "testExplorer.useNativeTesting" = true; # TODO: doesn't seem to be a valid option
