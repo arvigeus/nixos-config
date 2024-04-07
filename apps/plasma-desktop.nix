@@ -76,7 +76,7 @@
   programs.konsole = {
     enable = true;
 
-    defaultProfile = "default.profile";
+    defaultProfile = "default";
     profiles.default = {
       name = "default";
       font = {
