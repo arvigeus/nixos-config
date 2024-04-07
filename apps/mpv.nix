@@ -1,5 +1,235 @@
 {pkgs, ...}: let
-  defaultShaders = "${pkgs.mpv-shim-default-shaders}/share/mpv-shim-default-shaders/shaders/";
+  shaders = "${pkgs.mpv-shim-default-shaders}/share/mpv-shim-default-shaders/shaders/";
+  # https://github.com/iwalton3/default-shader-pack/blob/b573551f021f942d6c7546391c7c994bb435ee6c/pack-next.json
+  profiles = {
+    fsr = {
+      name = "AMD FidelityFX Super Resolution";
+      settings = {
+        glsl-shader = "${shaders}/FSR.glsl";
+      };
+    };
+    cas = {
+      name = "AMD FidelityFX Contrast Adaptive Sharpening";
+      settings = {
+        glsl-shader = "${shaders}/CAS-scaled.glsl";
+      };
+    };
+    fsr-cas = {
+      name = "AMD FidelityFX Super Resolution + Contrast Adaptive Sharpening";
+      settings = {
+        glsl-shaders = [
+          "${shaders}/FSR.glsl"
+          "${shaders}/CAS-scaled.glsl"
+        ];
+      };
+    };
+    generic = {
+      name = "FSRCNNX";
+      settings = {
+        dscale = "mitchell";
+        cscale = "mitchell";
+        glsl-shaders = [
+          "${shaders}FSRCNNX_x2_16-0-4-1.glsl"
+          "${shaders}SSimDownscaler.glsl"
+          "${shaders}KrigBilateral.glsl"
+        ];
+      };
+    };
+    generic-high = {
+      name = "FSRCNNX x16";
+      settings = {
+        dscale = "mitchell";
+        cscale = "mitchell";
+        glsl-shaders = [
+          "${shaders}FSRCNNX_x2_8-0-4-1.glsl"
+          "${shaders}SSimDownscaler.glsl"
+          "${shaders}KrigBilateral.glsl"
+        ];
+      };
+    };
+    nnedi-high = {
+      name = "NNEDI3 (64 Neurons)";
+      settings = {
+        dscale = "mitchell";
+        cscale = "mitchell";
+        glsl-shaders = [
+          "${shaders}nnedi3-nns64-win8x6.hook"
+          "${shaders}SSimDownscaler.glsl"
+          "${shaders}KrigBilateral.glsl"
+        ];
+      };
+    };
+    nnedi-very-high = {
+      name = "NNEDI3 High (128 Neurons)";
+      settings = {
+        dscale = "mitchell";
+        cscale = "mitchell";
+        glsl-shaders = [
+          "${shaders}nnedi3-nns128-win8x6.hook"
+          "${shaders}SSimDownscaler.glsl"
+          "${shaders}KrigBilateral.glsl"
+        ];
+      };
+    };
+    anime4k-high-a = {
+      name = "Anime4K A (HQ) - For Very Blurry/Compressed";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_VL.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+        ];
+      };
+    };
+    anime4k-high-b = {
+      name = "Anime4K B (HQ) - For Blurry/Ringing";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_Soft_VL.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+        ];
+      };
+    };
+    anime4k-high-c = {
+      name = "Anime4K C (HQ) - For Crisp/Sharp";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Upscale_Denoise_CNN_x2_VL.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+        ];
+      };
+    };
+    anime4k-high-aa = {
+      name = "Anime4K AA (HQ) - For Very Blurry/Compressed";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_VL.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Restore_CNN_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+        ];
+      };
+    };
+    anime4k-high-bb = {
+      name = "Anime4K BB (HQ) - For Blurry/Ringing";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_Soft_VL.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Restore_CNN_Soft_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+        ];
+      };
+    };
+    anime4k-high-ca = {
+      name = "Anime4K CA (HQ) - For Crisp/Sharp";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Upscale_Denoise_CNN_x2_VL.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Restore_CNN_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+        ];
+      };
+    };
+    anime4k-fast-a = {
+      name = "Anime4K A (Fast) - For Very Blurry/Compressed";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_S.glsl"
+        ];
+      };
+    };
+    anime4k-fast-b = {
+      name = "Anime4K B (Fast) - For Blurry/Ringing";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_Soft_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_S.glsl"
+        ];
+      };
+    };
+    anime4k-fast-c = {
+      name = "Anime4K C (Fast) - For Crisp/Sharp";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Upscale_Denoise_CNN_x2_M.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_S.glsl"
+        ];
+      };
+    };
+    anime4k-fast-aa = {
+      name = "Anime4K AA (Fast) - For Very Blurry/Compressed";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Restore_CNN_S.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_S.glsl"
+        ];
+      };
+    };
+    anime4k-fast-bb = {
+      name = "Anime4K BB (Fast) - For Blurry/Ringing";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Restore_CNN_Soft_M.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Restore_CNN_Soft_S.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_S.glsl"
+        ];
+      };
+    };
+    anime4k-fast-cc = {
+      name = "Anime4K CA (Fast) - For Crisp/Sharp";
+      settings = {
+        glsl-shaders = [
+          "${shaders}Anime4K_Clamp_Highlights.glsl"
+          "${shaders}Anime4K_Upscale_Denoise_CNN_x2_M.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
+          "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
+          "${shaders}Anime4K_Restore_CNN_S.glsl"
+          "${shaders}Anime4K_Upscale_CNN_x2_S.glsl"
+        ];
+      };
+    };
+  };
 in {
   programs.mpv = {
     enable = true;
@@ -79,196 +309,51 @@ in {
       "# set sub-delay 0" = "#! Subtitles > Delay > Reset Subtitles Delay";
 
       "# script-binding sview/shader-view" = "#! Profiles > Show Loaded Shaders";
-      "# change-list glsl-shaders clr all" = "#! Profiles > Clear All Shaders";
+      "CTRL+0 change-list glsl-shaders clr all; show-text \"Shaders cleared\"" = "#! Profiles > Clear All Shaders";
       "# #! Profiles >" = "---";
-      "# apply-profile fsr" = "#! Profiles > AMD FidelityFX Super Resolution";
-      "# apply-profile cas" = "#! Profiles > AMD FidelityFX Contrast Adaptive Sharpening";
-      "# apply-profile genreric" = "#! Profiles > FSRCNNX";
-      "# apply-profile generic-high" = "#! Profiles > FSRCNNX x16";
-      "# apply-profile nnedi-high" = "#! Profiles > NNEDI3 (64 Neurons)";
-      "# apply-profile nnedi-very-high" = "#! Profiles > NNEDI3 High (128 Neurons)";
-      "# apply-profile anime4k-high-a" = "#! Profiles > Anime4K A (HQ) - For Very Blurry/Compressed";
-      "# apply-profile anime4k-high-b" = "#! Profiles > Anime4K B (HQ) - For Blurry/Ringing";
-      "# apply-profile anime4k-high-c" = "#! Profiles > Anime4K C (HQ) - For Crisp/Sharp";
-      "# apply-profile anime4k-high-aa" = "#! Profiles > Anime4K AA (HQ) - For Very Blurry/Compressed";
-      "# apply-profile anime4k-high-bb" = "#! Profiles > Anime4K BB (HQ) - For Blurry/Ringing";
-      "# apply-profile anime4k-high-ca" = "#! Profiles > Anime4K CA (HQ) - For Crisp/Sharp";
-      "# apply-profile anime4k-fast-a" = "#! Profiles > Anime4K A (Fast) - For Very Blurry/Compressed";
-      "# apply-profile anime4k-fast-b" = "#! Profiles > Anime4K B (Fast) - For Blurry/Ringing";
-      "# apply-profile anime4k-fast-c" = "#! Profiles > Anime4K C (Fast) - For Crisp/Sharp";
-      "# apply-profile anime4k-fast-aa" = "#! Profiles > Anime4K AA (Fast) - For Very Blurry/Compressed";
-      "# apply-profile anime4k-fast-bb" = "#! Profiles > Anime4K BB (Fast) - For Blurry/Ringing";
-      "# apply-profile anime4k-fast-ca" = "#! Profiles > Anime4K CA (Fast) - For Crisp/Sharp";
+      "# apply-profile fsr; show-text \"Profile: ${profiles.fsr.name}\"" = "#! Profiles > ${profiles.fsr.name}";
+      "# apply-profile cas; show-text \"Profile: ${profiles.cas.name}\"" = "#! Profiles > ${profiles.cas.name}";
+      "CTRL+1 apply-profile fsr-cas; show-text \"Profile: ${profiles.fsr-cas.name}\"" = "#! Profiles > ${profiles.fsr-cas.name}";
+      "# apply-profile genreric" = "#! Profiles > ${profiles.generic.name}";
+      "CTRL+2 apply-profile generic-high; show-text \"Profile: ${profiles.generic-high.name}\"" = "#! Profiles > ${profiles.generic-high.name}";
+      "# apply-profile nnedi-high; show-text \"Profile: ${profiles.nnedi-high.name}\"" = "#! Profiles > ${profiles.nnedi-high.name}";
+      "CTRL+3 apply-profile nnedi-very-high; show-text \"Profile: ${profiles.nnedi-very-high.name}\"" = "#! Profiles > ${profiles.nnedi-very-high.name}";
+      "CTRL+4 apply-profile anime4k-high-a; show-text \"Profile: ${profiles.anime4k-high-a.name}\"" = "#! Profiles > ${profiles.anime4k-high-a.name}";
+      "CTRL+5 apply-profile anime4k-high-b; show-text \"Profile: ${profiles.anime4k-high-b.name}\"" = "#! Profiles > ${profiles.anime4k-high-b.name}";
+      "CTRL+6 apply-profile anime4k-high-c; show-text \"Profile: ${profiles.anime4k-high-c.name}\"" = "#! Profiles > ${profiles.anime4k-high-c.name}";
+      "CTRL+7 apply-profile anime4k-high-aa; show-text \"Profile: ${profiles.anime4k-high-aa.name}\"" = "#! Profiles > ${profiles.anime4k-high-aa.name}";
+      "CTRL+8 apply-profile anime4k-high-bb; show-text \"Profile: ${profiles.anime4k-high-bb.name}\"" = "#! Profiles > ${profiles.anime4k-high-bb.name}";
+      "CTRL+9 apply-profile anime4k-high-ca; show-text \"Profile: ${profiles.anime4k-high-ca.name}\"" = "#! Profiles > ${profiles.anime4k-high-ca.name}";
+      "# apply-profile anime4k-fast-a; show-text \"Profile: ${profiles.anime4k-fast-a.name}\"" = "#! Profiles > ${profiles.anime4k-fast-a.name}";
+      "# apply-profile anime4k-fast-b; show-text \"Profile: ${profiles.anime4k-fast-b.name}\"" = "#! Profiles > ${profiles.anime4k-fast-b.name}";
+      "# apply-profile anime4k-fast-c; show-text \"Profile: ${profiles.anime4k-fast-c.name}\"" = "#! Profiles > ${profiles.anime4k-fast-c.name}";
+      "# apply-profile anime4k-fast-aa; show-text \"Profile: ${profiles.anime4k-fast-aa.name}\"" = "#! Profiles > ${profiles.anime4k-fast-aa.name}";
+      "# apply-profile anime4k-fast-bb; show-text \"Profile: ${profiles.anime4k-fast-bb.name}\"" = "#! Profiles > ${profiles.anime4k-fast-bb.name}";
+      "# apply-profile anime4k-fast-cc; show-text \"Profile: ${profiles.anime4k-fast-cc.name}\"" = "#! Profiles > ${profiles.anime4k-fast-cc.name}";
     };
 
     defaultProfiles = ["high-quality"]; # https://github.com/mpv-player/mpv/blob/master/etc/builtin.conf
 
     profiles = {
-      # https://github.com/iwalton3/default-shader-pack/blob/b573551f021f942d6c7546391c7c994bb435ee6c/pack-next.json
-      fsr = {
-        glsl-shader = "${defaultShaders}/FSR.glsl";
-      };
-      cas = {
-        glsl-shader = "${defaultShaders}/CAS-scaled.glsl";
-      };
-      anime4k-high-a = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_VL.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_VL.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-        ];
-      };
-      anime4k-high-b = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_Soft_VL.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_VL.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-        ];
-      };
-      anime4k-high-c = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Upscale_Denoise_CNN_x2_VL.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-        ];
-      };
-      anime4k-high-aa = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_VL.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_VL.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-        ];
-      };
-      anime4k-high-bb = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_Soft_VL.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_VL.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_Soft_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-        ];
-      };
-      anime4k-high-ca = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Upscale_Denoise_CNN_x2_VL.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-        ];
-      };
-      anime4k-fast-a = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_S.glsl"
-        ];
-      };
-      anime4k-fast-b = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_Soft_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_S.glsl"
-        ];
-      };
-      anime4k-fast-c = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Upscale_Denoise_CNN_x2_M.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_S.glsl"
-        ];
-      };
-      anime4k-fast-aa = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_S.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_S.glsl"
-        ];
-      };
-      anime4k-fast-bb = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_Soft_M.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_M.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_Soft_S.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_S.glsl"
-        ];
-      };
-      anime4k-fast-cc = {
-        glsl-shaders = [
-          "${defaultShaders}Anime4K_Clamp_Highlights.glsl"
-          "${defaultShaders}Anime4K_Upscale_Denoise_CNN_x2_M.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x2.glsl"
-          "${defaultShaders}Anime4K_AutoDownscalePre_x4.glsl"
-          "${defaultShaders}Anime4K_Restore_CNN_S.glsl"
-          "${defaultShaders}Anime4K_Upscale_CNN_x2_S.glsl"
-        ];
-      };
-      genreric = {
-        dscale = "mitchell";
-        cscale = "mitchell";
-        glsl-shaders = [
-          "${defaultShaders}FSRCNNX_x2_16-0-4-1.glsl"
-          "${defaultShaders}SSimDownscaler.glsl"
-          "${defaultShaders}KrigBilateral.glsl"
-        ];
-      };
-      genreric-high = {
-        dscale = "mitchell";
-        cscale = "mitchell";
-        glsl-shaders = [
-          "${defaultShaders}FSRCNNX_x2_8-0-4-1.glsl"
-          "${defaultShaders}SSimDownscaler.glsl"
-          "${defaultShaders}KrigBilateral.glsl"
-        ];
-      };
-      "nnedi-high" = {
-        dscale = "mitchell";
-        cscale = "mitchell";
-        glsl-shaders = [
-          "${defaultShaders}nnedi3-nns64-win8x6.hook"
-          "${defaultShaders}SSimDownscaler.glsl"
-          "${defaultShaders}KrigBilateral.glsl"
-        ];
-      };
-      "nnedi-very-high" = {
-        dscale = "mitchell";
-        cscale = "mitchell";
-        glsl-shaders = [
-          "${defaultShaders}nnedi3-nns128-win8x6.hook"
-          "${defaultShaders}SSimDownscaler.glsl"
-          "${defaultShaders}KrigBilateral.glsl"
-        ];
-      };
+      fsr = profiles.fsr.settings;
+      cas = profiles.cas.settings;
+      fsr-cas = profiles.fsr-cas.settings;
+      anime4k-high-a = profiles.anime4k-high-a.settings;
+      anime4k-high-b = profiles.anime4k-high-b.settings;
+      anime4k-high-c = profiles.anime4k-high-c.settings;
+      anime4k-high-aa = profiles.anime4k-high-aa.settings;
+      anime4k-high-bb = profiles.anime4k-high-bb.settings;
+      anime4k-high-ca = profiles.anime4k-high-ca.settings;
+      anime4k-fast-a = profiles.anime4k-fast-a.settings;
+      anime4k-fast-b = profiles.anime4k-fast-b.settings;
+      anime4k-fast-c = profiles.anime4k-fast-c.settings;
+      anime4k-fast-aa = profiles.anime4k-fast-aa.settings;
+      anime4k-fast-bb = profiles.anime4k-fast-bb.settings;
+      anime4k-fast-cc = profiles.anime4k-fast-cc.settings;
+      genreric = profiles.generic.settings;
+      generic-high = profiles.generic-high.settings;
+      nnedi-high = profiles.nnedi-high.settings;
+      nnedi-very-high = profiles.nnedi-very-high.settings;
     };
   };
 }
