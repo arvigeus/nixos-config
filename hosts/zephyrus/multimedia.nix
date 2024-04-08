@@ -14,10 +14,18 @@
     rename-by-metadata
   ];
 
-  home-manager.users.arvigeus.imports = [
-    ../../apps/mpv.nix
-    ../../apps/yt-dlp.nix
-  ];
+  home-manager.users.arvigeus = {
+    imports = [
+      ../../apps/mpv.nix
+      ../../apps/yt-dlp.nix
+    ];
+
+    xdg.mimeApps.defaultApplications = {
+      "audio/*" = ["mpv.desktop"];
+      "video/*" = ["mpv.desktop" "vlc.desktop"];
+      "image/*" = ["gwenview.desktop"];
+    };
+  };
 
   services.xserver.desktopManager.kodi.enable = true;
 }

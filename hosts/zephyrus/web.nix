@@ -23,10 +23,11 @@
       ../../apps/firefox.nix
     ];
 
-    xdg.mimeApps = {
-      defaultApplications."x-scheme-handler/http" = ["firefox.desktop" "chromium.desktop"];
-      defaultApplications."x-scheme-handler/https" = ["firefox.desktop" "chromium.desktop"];
-      defaultApplications."text/html" = ["firefox.desktop" "chromium.desktop"];
+    xdg.mimeApps.defaultApplications = {
+      "x-scheme-handler/http" = ["firefox.desktop" "chromium.desktop"];
+      "x-scheme-handler/https" = ["firefox.desktop" "chromium.desktop"];
+      "text/html" = ["firefox.desktop" "chromium.desktop"];
+      "x-scheme-handler/mailto" = ["thunderbird.desktop"];
     };
   };
 }
