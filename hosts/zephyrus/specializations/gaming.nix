@@ -10,7 +10,7 @@
   # Disable services
   virtualisation.podman.enable = lib.mkForce false;
   virtualisation.libvirtd.enable = lib.mkForce false;
-  virtualisation.virtualbox.host.enable = lib.mkForce false;
+  # virtualisation.virtualbox.host.enable = lib.mkForce false;
 
   services.asusd.profileConfig = "Performance";
   services.supergfxd = {

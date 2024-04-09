@@ -39,11 +39,12 @@
     };
   };
 
+  # https://bobcares.com/blog/virt-manager-gpu-passthrough/
   virtualisation.libvirtd.enable = true;
   users.users.arvigeus.extraGroups = ["libvirtd"];
 
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = ["arvigeus"];
-  virtualisation.virtualbox.host.enableExtensionPack = true;
-  virtualisation.virtualbox.guest.enable = true;
+  # virtualisation.virtualbox.host.enable = true;
+  # users.extraGroups.vboxusers.members = ["arvigeus"];
+  # virtualisation.virtualbox.host.enableExtensionPack = true;
+  # virtualisation.virtualbox.guest.enable = true;
 }
