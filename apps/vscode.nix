@@ -13,14 +13,14 @@
 
         # Essentials
         mikestead.dotenv
-        # editorconfig.editorconfig
+        editorconfig.editorconfig
 
         # Interface Improvements
         eamodio.gitlens
         usernamehw.errorlens
         pflannery.vscode-versionlens
         wix.vscode-import-cost
-        # gruntfuggly.todo-tree
+        gruntfuggly.todo-tree
         zhuangtongfa.material-theme
 
         # Web Dev
@@ -29,7 +29,7 @@
         csstools.postcss
         stylelint.vscode-stylelint
         bradlc.vscode-tailwindcss
-        # davidanson.vscode-markdownlint
+        davidanson.vscode-markdownlint
         unifiedjs.vscode-mdx
         # zenclabs.previewjs # Error: EROFS: read-only file system
 
@@ -37,8 +37,8 @@
         denoland.vscode-deno
 
         # GraphQL
-        # graphql.vscode-graphql-syntax
-        # graphql.vscode-graphql
+        graphql.vscode-graphql-syntax
+        graphql.vscode-graphql
 
         # Nix
         jnoortheen.nix-ide
@@ -65,13 +65,6 @@
         ms-vsliveshare.vsliveshare
         codeforge.remix-forge
         amodio.toggle-excluded-files
-
-        # FIXME: Until this is resolved: https://github.com/nix-community/nix-vscode-extensions/issues/57
-        editorconfig.editorconfig
-        gruntfuggly.todo-tree
-        davidanson.vscode-markdownlint
-        graphql.vscode-graphql-syntax
-        graphql.vscode-graphql
       ]);
 
     userSettings = {
