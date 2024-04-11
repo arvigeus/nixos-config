@@ -3,8 +3,8 @@
     vlc
     stable.gimp-with-plugins # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/graphics/gimp/plugins/default.nix
     qbittorrent-qt5
-    lightworks
-    davinci-resolve
+    # lightworks
+    # davinci-resolve
     mkvtoolnix
     ffmpeg
     subtitlecomposer

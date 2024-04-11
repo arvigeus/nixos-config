@@ -5,21 +5,21 @@
     fsr = {
       name = "AMD FidelityFX Super Resolution";
       settings = {
-        glsl-shader = "${shaders}/FSR.glsl";
+        glsl-shader = "${shaders}FSR.glsl";
       };
     };
     cas = {
       name = "AMD FidelityFX Contrast Adaptive Sharpening";
       settings = {
-        glsl-shader = "${shaders}/CAS-scaled.glsl";
+        glsl-shader = "${shaders}CAS-scaled.glsl";
       };
     };
     fsr-cas = {
       name = "AMD FidelityFX Super Resolution + Contrast Adaptive Sharpening";
       settings = {
         glsl-shaders = [
-          "${shaders}/FSR.glsl"
-          "${shaders}/CAS-scaled.glsl"
+          "${shaders}FSR.glsl"
+          "${shaders}CAS-scaled.glsl"
         ];
       };
     };

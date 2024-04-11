@@ -9,7 +9,7 @@
     # Messaging
     telegram-desktop
     whatsapp-for-linux
-    teams-for-linux
+    # teams-for-linux
     discord
     thunderbird
   ];
