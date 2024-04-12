@@ -19,6 +19,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}FSR.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}CAS-scaled.glsl"
         ];
       };
@@ -30,6 +32,8 @@
         cscale = "mitchell";
         glsl-shaders = [
           "${shaders}FSRCNNX_x2_16-0-4-1.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}SSimDownscaler.glsl"
           "${shaders}KrigBilateral.glsl"
         ];
@@ -42,6 +46,8 @@
         cscale = "mitchell";
         glsl-shaders = [
           "${shaders}FSRCNNX_x2_8-0-4-1.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}SSimDownscaler.glsl"
           "${shaders}KrigBilateral.glsl"
         ];
@@ -54,6 +60,8 @@
         cscale = "mitchell";
         glsl-shaders = [
           "${shaders}nnedi3-nns64-win8x6.hook"
+        ];
+        glsl-shaders-append = [
           "${shaders}SSimDownscaler.glsl"
           "${shaders}KrigBilateral.glsl"
         ];
@@ -66,6 +74,8 @@
         cscale = "mitchell";
         glsl-shaders = [
           "${shaders}nnedi3-nns128-win8x6.hook"
+        ];
+        glsl-shaders-append = [
           "${shaders}SSimDownscaler.glsl"
           "${shaders}KrigBilateral.glsl"
         ];
@@ -76,6 +86,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Restore_CNN_VL.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -89,6 +101,9 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
+          "${shaders}CAS-scaled.glsl"
           "${shaders}Anime4K_Restore_CNN_Soft_VL.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -102,6 +117,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Upscale_Denoise_CNN_x2_VL.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
@@ -114,6 +131,9 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
+          "${shaders}CAS-scaled.glsl"
           "${shaders}Anime4K_Restore_CNN_VL.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -128,6 +148,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Restore_CNN_Soft_VL.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_VL.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -142,6 +164,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Upscale_Denoise_CNN_x2_VL.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
@@ -155,6 +179,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Restore_CNN_M.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -168,6 +194,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Restore_CNN_Soft_M.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -181,6 +209,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Upscale_Denoise_CNN_x2_M.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
@@ -193,6 +223,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Restore_CNN_M.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -207,6 +239,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Restore_CNN_Soft_M.glsl"
           "${shaders}Anime4K_Upscale_CNN_x2_M.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
@@ -221,6 +255,8 @@
       settings = {
         glsl-shaders = [
           "${shaders}Anime4K_Clamp_Highlights.glsl"
+        ];
+        glsl-shaders-append = [
           "${shaders}Anime4K_Upscale_Denoise_CNN_x2_M.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x2.glsl"
           "${shaders}Anime4K_AutoDownscalePre_x4.glsl"
