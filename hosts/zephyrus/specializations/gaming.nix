@@ -5,7 +5,7 @@
 }: {
   imports = [inputs.jovian-nixos.nixosModules.default];
 
-  services.xserver.displayManager.sddm.enable = lib.mkForce false;
+  services.displayManager.sddm.enable = lib.mkForce false;
 
   # Disable services
   virtualisation.podman.enable = lib.mkForce false;

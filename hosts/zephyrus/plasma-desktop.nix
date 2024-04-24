@@ -3,19 +3,8 @@
   inputs,
   ...
 }: {
-  # Configure keymap in X11
-  services.xserver = {
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm = {
+  services.displayManager.sddm = {
     enable = true;
     enableHidpi = true;
   };
@@ -25,8 +14,8 @@
   security.pam.services.ssdm.gnupg.enable = true;
 
   # Enable Wayland
-  services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.displayManager.defaultSession = "plasma";
+  services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.defaultSession = "plasma";
   programs.dconf.enable = true; # fix theming issues in GTK apps
 
   environment.sessionVariables = {

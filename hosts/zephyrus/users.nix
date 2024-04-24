@@ -20,8 +20,8 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "arvigeus";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "arvigeus";
 
   # home-manager.useGlobalPkgs = true; # Cannot use overlays with this
   home-manager.useUserPackages = true;
