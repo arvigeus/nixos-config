@@ -101,6 +101,20 @@
               definedAliases = ["@k"];
             };
 
+            "Ecosia" = {
+              urls = [{template = "https://www.ecosia.org/search?q={searchTerms}";}];
+              iconUpdateURL = "https://www.ecosia.org/static/icons/favicon.ico";
+              # updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = ["@e"];
+            };
+
+            "DuckDuckGo" = {
+              urls = [{template = "https://duckduckgo.com/?q={searchTerms}";}];
+              iconUpdateURL = "https://duckduckgo.com/favicon.ico";
+              # updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = ["@ddg"];
+            };
+
             "Bing".metaData.hidden = true;
             "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
           };
