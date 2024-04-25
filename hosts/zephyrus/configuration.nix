@@ -161,10 +161,11 @@
 
   # Storage optimization
   nix.settings.auto-optimise-store = true;
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
