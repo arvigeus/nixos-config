@@ -26,6 +26,7 @@
   xdg.portal.enable = true;
 
   environment.systemPackages = with pkgs.kdePackages; [
+    kio-admin
     kate
     kget
     kaccounts-integration
