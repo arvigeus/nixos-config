@@ -115,7 +115,9 @@
     pciutils
     fwupd
     killall
-    neofetch
+    fastfetch
+    btop
+    corectrl
     p7zip
     unrar
     whois

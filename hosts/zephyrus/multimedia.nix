@@ -9,6 +9,7 @@
     ffmpeg
     subtitlecomposer
     audacious
+    # ardour
 
     # Custom packages
     rename-by-metadata
