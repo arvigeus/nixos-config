@@ -4,6 +4,9 @@
     dotnet-sdk
     nodejs_18
     rustup
+    gcc
+    python3
+    jq
     meld
     fira-code
     noto-fonts
