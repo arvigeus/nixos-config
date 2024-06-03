@@ -69,6 +69,8 @@
     package = pkgs.asusctl;
   };
 
+  services.system76-scheduler.enable = true;
+
   # Battery
   hardware.asus.battery.chargeUpto = 75;
 
@@ -119,6 +121,7 @@
     btop
     corectrl
     p7zip
+    unzip
     unrar
     whois
     libnotify

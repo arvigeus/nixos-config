@@ -14,7 +14,6 @@
 
   imports = [
     ../../apps/steam.nix
-    ../../apps/gamemode.nix
     ../../apps/gamescope.nix
   ];
 }
