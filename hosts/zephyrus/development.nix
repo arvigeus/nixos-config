@@ -3,6 +3,7 @@
     lapce
     dotnet-sdk
     nodejs_18
+    deno
     rustup
     gcc
     python3
