@@ -19,6 +19,7 @@
         eamodio.gitlens
         usernamehw.errorlens
         pflannery.vscode-versionlens
+        yoavbls.pretty-ts-errors
         wix.vscode-import-cost
         gruntfuggly.todo-tree
         zhuangtongfa.material-theme
