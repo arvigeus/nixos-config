@@ -7,6 +7,7 @@
     rustup
     gcc
     python3
+    boxbuddy
     jq
     meld
     fira-code
