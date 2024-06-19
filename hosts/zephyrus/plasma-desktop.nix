@@ -32,6 +32,8 @@
     kaccounts-integration
     kaccounts-providers
     kio-gdrive
+    kimageformats
+    qtimageformats # webp preview in Dolphin
     sddm-kcm
     filelight
     kcalc
