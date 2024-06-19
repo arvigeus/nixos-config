@@ -88,6 +88,12 @@
               definedAliases = ["@nw"];
             };
 
+            "Sourcegraph NixOS" = {
+              urls = [{template = "https://sourcegraph.com/search?q=context:global+fork:no+lang:nix+{searchTerms}";}];
+              iconUpdateURL = "https://sourcegraph.com/favicon.png";
+              definedAliases = ["@sn"];
+            };
+
             "GitHub NixOS" = {
               urls = [{template = "https://github.com/search?q=language%3Anix+NOT+is%3Afork+{searchTerms}&type=code";}];
               iconUpdateURL = "https://github.com/favicon.ico";
@@ -113,6 +119,14 @@
               iconUpdateURL = "https://duckduckgo.com/favicon.ico";
               # updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = ["@ddg"];
+            };
+
+            # Independant search engine
+            "Mojeek" = {
+              urls = [{template = "https://www.mojeek.com/search?q={searchTerms}";}];
+              iconUpdateURL = "https://www.mojeek.com/favicon.ico";
+              # updateInterval = 24 * 60 * 60 * 1000; # every day
+              definedAliases = ["@mj"];
             };
 
             "Bing".metaData.hidden = true;
