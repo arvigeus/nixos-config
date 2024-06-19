@@ -23,16 +23,15 @@ list-packages:
 	nix-env -qa
 
 cleanup:
-	nh clean all --keep-since 7d --keep 3
 	sudo nix profile wipe-history --older-than 7d --profile /nix/var/nix/profiles/system
-	sudo nix store gc --debug
-	sudo nixos-rebuild switch --flake .
+	sudo nix store gc
+	nh clean all --keep-since 7d --keep 3
 
 
 anchor:
-	nh clean all
+	sudo nix store gc
 	# System
-	# sudo nix-collect-garbage -d
+	sudo nix-collect-garbage -d
 	# User
-	# nix-collect-garbage -d
-	# sudo nixos-rebuild switch --flake .
+	nix-collect-garbage -d
+	nh clean all
