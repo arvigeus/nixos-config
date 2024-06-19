@@ -1,9 +1,18 @@
 {
   lib,
   inputs,
+  pkgs,
   ...
 }: {
-  imports = [inputs.jovian-nixos.nixosModules.default];
+  imports = [
+    inputs.jovian-nixos.nixosModules.default
+    inputs.chaotic.nixosModules.default
+  ];
+
+  # Use CachyOS' kernel
+  # To confirm: `zgrep 'SCHED_CLASS' /proc/config.gz` should return `CONFIG_SCHED_CLASS_EXT=y`
+  boot.kernelPackages = pkgs.linuxPackages_cachyos;
+  chaotic.scx.enable = true; # by default uses scx_rustland scheduler
 
   services.displayManager.sddm.enable = lib.mkForce false;
 
