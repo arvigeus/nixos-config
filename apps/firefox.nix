@@ -34,6 +34,7 @@
           "browser.shell.defaultBrowserCheckCount" = 1;
           "browser.startup.page" = 3; # Restore session
           "browser.tabs.inTitlebar" = 0; # Use system's titlebar
+          "dom.webgpu.enabled" = true;
 
           # Enable HTTPS-Only Mode
           "dom.security.https_only_mode" = true;
