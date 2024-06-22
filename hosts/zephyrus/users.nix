@@ -13,7 +13,7 @@
   users.users.arvigeus = {
     isNormalUser = true;
     description = "Nikolay Stoynov";
-    extraGroups = ["networkmanager" "wheel" "media"];
+    extraGroups = ["networkmanager" "wheel" "media" "video"];
     openssh.authorizedKeys.keys = [
       # TODO: Add your SSH public key(s) here
     ];

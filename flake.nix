@@ -44,6 +44,8 @@
     };
 
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
+
+    nixarr.url = "github:rasmus-kirk/nixarr";
   };
 
   outputs = {
