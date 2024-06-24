@@ -1,4 +1,5 @@
 {
+  pkgs,
   inputs,
   outputs,
   ...
@@ -14,6 +15,7 @@
     isNormalUser = true;
     description = "Nikolay Stoynov";
     extraGroups = ["networkmanager" "wheel" "media" "video"];
+    shell = pkgs.nushell;
     openssh.authorizedKeys.keys = [
       # TODO: Add your SSH public key(s) here
     ];

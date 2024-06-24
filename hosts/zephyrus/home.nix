@@ -20,6 +20,8 @@
     };
   };
 
+  imports = [../../apps/nushell.nix];
+
   home = {
     username = "arvigeus";
     homeDirectory = "/home/arvigeus";
