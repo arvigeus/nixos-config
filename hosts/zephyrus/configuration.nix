@@ -55,7 +55,7 @@
   hardware.enableRedistributableFirmware = true;
 
   # AMD GPU Configuration
-  hardware.amdgpu.opencl = true;
+  hardware.amdgpu.opencl.enable = true;
   hardware.amdgpu.loadInInitrd = true;
 
   # Enables hybrid graphics management and ASUS-specific hardware control.
