@@ -20,6 +20,7 @@
   virtualisation.podman.enable = lib.mkForce false;
   virtualisation.libvirtd.enable = lib.mkForce false;
   # virtualisation.virtualbox.host.enable = lib.mkForce false;
+  services.system76-scheduler.enable = lib.mkForce false; # BORE scheduler from CachyOS is used instead
 
   services.asusd.profileConfig = "Performance";
   services.supergfxd = {
