@@ -69,6 +69,16 @@
     package = pkgs.asusctl;
   };
 
+  systemd.services.lact = {
+    description = "AMDGPU Control Daemon";
+    after = ["multi-user.target"];
+    wantedBy = ["multi-user.target"];
+    serviceConfig = {
+      ExecStart = "${pkgs.lact}/bin/lact daemon";
+    };
+    enable = true;
+  };
+
   services.system76-scheduler.enable = true;
 
   # Battery
@@ -119,7 +129,7 @@
     killall
     fastfetch
     btop
-    corectrl
+    lact
     p7zip
     unzip
     unrar

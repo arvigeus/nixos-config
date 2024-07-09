@@ -25,6 +25,10 @@
 
   xdg.portal.enable = true;
 
+  environment.systemPackages =  with pkgs; [
+    supergfxctl-plasmoid
+  ];
+
   environment.systemPackages = with pkgs.kdePackages; [
     kio-admin
     kate
