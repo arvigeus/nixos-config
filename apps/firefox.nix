@@ -22,7 +22,6 @@
           search-by-image
           grammarly
 
-          honey
           # cultivate
           # the-camelizer
         ];
