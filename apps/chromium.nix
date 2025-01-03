@@ -14,7 +14,6 @@
       "ponfpcnoihfmfllpaingbgckeeldkhle" # enhancer-for-youtube
       "cnojnbdhbhnkbcieeekonklommdnndci" # search-by-image
       "kbfnbcaeplbcioakkpcpgfkobkghlhen" # grammarly-ai-writing-and
-      "bmnlcjabgnpnenekpadlanbbkooimhnj" # paypal-honey-automatic-co
       "pfldomphmndnmmhhlbekfbafifkkpnbc" # cultivate-amazon-product
       "ghnomdcacenbmilgjigehppbamfndblo" # the-camelizer
     ];
